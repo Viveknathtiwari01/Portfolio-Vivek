@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-gray-900 dark:to-gray-800 min-h-screen;
+  }
+}
+
+@layer components {
+  .section-container {
+    @apply relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24;
+  }
+  
+  .heading-primary {
+    @apply text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-secondary-600;
+  }
+  
+  .heading-secondary {
+    @apply text-3xl sm:text-4xl font-semibold text-gray-800 dark:text-gray-100 mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary-500 to-secondary-500;
+  }
+  
+  .paragraph {
+    @apply text-gray-600 dark:text-gray-300 leading-relaxed;
+  }
+  
+  .button-primary {
+    @apply relative inline-flex items-center px-6 py-3 border-2 border-primary-500 text-base font-semibold rounded-lg text-white 
+           bg-gradient-to-r from-primary-500 to-primary-600 
+           hover:from-primary-600 hover:to-primary-700
+           focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 
+           transform hover:-translate-y-0.5 hover:shadow-lg 
+           transition-all duration-200 
+           after:absolute after:inset-0 after:z-[-1] after:bg-gradient-to-r after:from-primary-500/20 after:to-secondary-500/20 after:blur-xl after:transition-all after:duration-200
+           hover:after:blur-2xl;
+  }
+  
+  .button-secondary {
+    @apply relative inline-flex items-center px-6 py-3 border-2 text-base font-semibold rounded-lg
+           border-gray-300 hover:border-secondary-400
+           text-gray-700 dark:text-gray-200 
+           bg-white dark:bg-gray-800 
+           hover:bg-gradient-to-r hover:from-secondary-50 hover:to-primary-50
+           dark:hover:bg-gray-700 
+           focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary-500 
+           shadow-sm hover:shadow-lg 
+           transform hover:-translate-y-0.5 
+           transition-all duration-200;
+  }
+  
+  .card {
+    @apply relative bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-all duration-200
+           before:absolute before:inset-0 before:z-[-1] before:bg-gradient-to-r before:from-primary-500/10 before:to-secondary-500/10 
+           before:rounded-xl before:blur-xl before:transition-all before:duration-200
+           hover:before:blur-2xl hover:before:from-primary-500/20 hover:before:to-secondary-500/20;
+  }
+
+  .section-pattern {
+    @apply absolute inset-0 bg-grid-gray-100/40 dark:bg-grid-gray-800/40 bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))];
+  }
+
+  .glass-effect {
+    @apply bg-white/70 dark:bg-gray-800/70 backdrop-blur-md border border-gray-200 dark:border-gray-700;
+  }
+
+  @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+  }
+
+  .floating {
+    animation: float 6s ease-in-out infinite;
+  }
+}
+
+@layer utilities {
+  .bg-grid-gray-100 {
+    background-image: linear-gradient(to right, #f1f5f9 1px, transparent 1px),
+                      linear-gradient(to bottom, #f1f5f9 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  .bg-grid-gray-800 {
+    background-image: linear-gradient(to right, #1f2937 1px, transparent 1px),
+                      linear-gradient(to bottom, #1f2937 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+} 

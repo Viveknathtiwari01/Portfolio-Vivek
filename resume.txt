@@ -1,0 +1,69 @@
+VIVEK NATH TIWARI
+Bettiah, Patna,Bihar, India | +91-6209464451 | viveknath62094@gmail.com | https://github.com/Viveknathtiwari01 |
+https://www.linkedin.com/in/vivek-nath-tiwari-a27156262/ |
+
+EDUCATION
+
+Masters of Computer Applications(MCA)
+      Dr. A. P. J. Abdul Kalam Technical University, Uttar Pradesh, Lucknow        August 2023-Present Lucknow, India
+      • CGPA: 8.48 (3rd Sem aggragate)
+
+Bachelors Of Computer Applications
+      Patna university, Patna College, Bihar   July 2019-December 2022 Patna, India
+      • CGPA: 8.71/10
+
+Intermediate, 12th   July 2017-March 2019 Bihar, India
+      GOVT Shri Harihar High School Patilar
+      • Percentage: 81.6 %
+
+Secondary School, 10th  June 2017 Bihar, India
+     Shri Harihar High School Patilar
+     • Percentage: 85.4 %
+     • Mathematics: 100/100
+TECHNICAL SKILLS
+
+
+• Programming Languages: C,Java, Python, SQL, HTML,CSS, JavaScript, Bootstrap, Node js, React, Express, AI/ML
+• Frameword: Skite-learn, tensorflow, pandas, Numpy, matplotlib
+ DataBase: My SQL, Oracle, MongoDb
+• Tools: Git, Github, VS code
+
+
+EXPERIENCE
+
+Full Stack Developer Intern (KarvaTech Solutions, Lucknow) (Paid Internship)
+Successfully completed 6 months of hands-on experience, contributing to automation and design-
+focused projects.
+• Designed and built a product catalog page and a responsive website for Coromass Crop Care
+Industries.
+• Created a CRM system for LBSIMDS, streamlining operations and improving data management
+efficiency.
+
+Web Developer Intern (SoftPro India Computer Technology, Lucknow)
+• Leamed and implemented new technologies to develop responsive and mobile-friendly web applica
+• Worked on small-scale projects, gaining practical experience in web development and enhancing
+problem-solving skills.
+Built a strong foundation in full-stack development by applying modern tools and frameworks.
+
+
+PROJECTS
+
+Weather App
+• Developed a weather forecast web application using HTML, CSS, and JavaScript.
+• Implemented a responsive design.
+Utilized the OpenWeatherMap API to fetch real-time weather data based on user input (city name).
+• Handled errors and provided feedback to the user incase of invalid city names or API request failures.
+
+MyContacts
+• Backend Application using Node.js and Express-js
+• RESTful APIs, middleware integration for authentication, validation, and error handling were
+implemented.
+• CURD operation is used on MongoDB database, Ocrypt used for password storing.
+Secure user authentication and data manipulation using JsonWebToken.
+Express-async-handler used for error handling through middleware.
+
+Whatsapp-Chat-Analyzer using Machine Learning
+
+Movies Prdidiction using MAchine Learning
+
+AI-Intervier using.

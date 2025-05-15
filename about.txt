@@ -1,0 +1,9 @@
+AboutAbout
+I’m a dynamic Full Stack Developer and aspiring AI/ML Engineer, currently in the final year of my MCA. With hands-on experience in MERN stack development and ongoing AI/ML training, I bring a strong foundation across both software development and data-driven technologies.
+
+I completed a 6-month paid internship as a Full Stack Developer, where I focused on building responsive web applications and scalable backend systems. Prior to that, I undertook 3 months of dedicated training in Python Django, which strengthened my skills in backend development and API integration.
+
+Currently, I’m diving deeper into AI and Machine Learning through practical training, working on projects involving data preprocessing, predictive modeling, and intelligent system deployment.
+
+
+Driven by curiosity and a passion for solving complex problems, I thrive in collaborative environments where continuous learning and innovation are encouraged. I’m actively seeking full-time opportunities in Full Stack Development, Data Analytics, or AI/ML Engineering, where I can contribute meaningfully and grow alongside a future-forward team.
