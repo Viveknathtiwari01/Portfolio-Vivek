@@ -29,7 +29,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0">
             <a href="#home" className="flex items-center space-x-2">
-              <a href="#about" className="relative w-8 h-8 rounded-full overflow-hidden">
+              <div className="relative w-8 h-8 rounded-full overflow-hidden">
                 <Image
                   src="/logo.png"
                   alt="Logo"
@@ -37,7 +37,7 @@ const Navbar = () => {
                   className="object-cover"
                   priority
                 />
-              </a>
+              </div>
               <span className="text-xl font-semibold text-gray-900 dark:text-white">Vivek</span>
             </a>
           </div>

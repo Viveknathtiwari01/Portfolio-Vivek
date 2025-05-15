@@ -33,7 +33,7 @@ const Projects = () => {
         { name: 'JavaScript', icon: SiJavascript, color: '#F7DF1E' },
       ],
       github: 'https://github.com/Viveknathtiwari01/Weather-app',
-      image: '/projects/weather.jpeg',
+      image: '/projects/weather-app.png',
     },
     {
       title: 'CHATVERSE',
@@ -46,7 +46,6 @@ const Projects = () => {
         { name: 'DALL-E', icon: SiOpenai, color: '#10A37F' },
         { name: 'React', icon: SiReact, color: '#61DAFB' },
         { name: 'Tailwind CSS', icon: SiTailwindcss, color: '#38BDF8' },
-        
       ],
       github: 'https://github.com/Viveknathtiwari01/CHATVERSE',
       image: '/projects/chatverse.png',
@@ -61,7 +60,7 @@ const Projects = () => {
         { name: 'Streamlit', icon: SiStreamlit, color: '#FF6F00' },
       ],
       github: 'https://github.com/Viveknathtiwari01/WhatsApp-Chat-Analysis',
-      image: '/projects/whatsapp-chat.png',
+      image: '/projects/whatsapp_chat_analyzer.png',
     },
     {
       title: 'AI Mock Interviewer',
@@ -69,7 +68,7 @@ const Projects = () => {
       techStack: [
         { name: 'Python', icon: SiPython, color: '#3776AB' },
         { name: 'Scikit-learn', icon: SiScikitlearn, color: '#F7931E' },
-        { name: 'Next Js', icon: SiNextdotjs, color: '#61DAFB' },
+        { name: 'Next Js', icon: SiNextdotjs, color: '#03045E' },
         { name: 'React', icon: SiReact, color: '#61DAFB' },
         { name: 'Node.js', icon: SiNodedotjs, color: '#339933' },
         { name: 'Express', icon: SiExpress, color: '#339933' },
@@ -77,15 +76,15 @@ const Projects = () => {
         { name: 'OpenAI', icon: SiOpenai, color: '#10A37F' },
       ],
       github: 'https://github.com/Viveknathtiwari01/AI_MOCK_INTERVIEWER',
-      image: '/projects/ai-interviwer.png',
+      image: '/projects/ai-interviewer.png',
     },
     {
       title: 'AI-Powered Career Coach',
       description: 'An AI-powered career coach that helps you to find jobs insights, market trends, mock interview preparation, resume builder, and cover letter builder.',
       techStack: [
         { name: 'React Js', icon: SiReact, color: '#61DAFB' },
-        { name: 'Next js', icon: SiNextdotjs, color: '#61DAFB' },
-        { name: 'Gemini API', icon: SiGoogle, color: '#10A37F' },
+        { name: 'Next js', icon: SiNextdotjs, color: '#03045E' },
+        { name: 'Gemini API', icon: SiGoogle, color: '#4285F4' },
         { name: 'Tailwind CSS', icon: SiTailwindcss, color: '#38BDF8' },
         { name: 'NeonDB', icon: SiPostgresql, color: '#336791' },
         { name: 'Clerk', icon: SiClerk, color: '#E34F26' },
@@ -142,12 +141,12 @@ const Projects = () => {
               className="card group hover:-translate-y-2 transition-all duration-300"
             >
               <div className="relative overflow-hidden rounded-t-lg">
-                <div className="h-48 bg-gradient-to-r from-primary-500/20 to-secondary-500/20 dark:from-primary-500/10 dark:to-secondary-500/10" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-4xl font-bold text-primary-600 dark:text-primary-400 opacity-20">
-                    {project.title.charAt(0)}
-                  </span>
-                </div>
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-48 object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-primary-500/20 to-secondary-500/20 dark:from-primary-500/10 dark:to-secondary-500/10" />
               </div>
               <div className="p-6 space-y-4">
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-primary-500 transition-colors duration-200">
