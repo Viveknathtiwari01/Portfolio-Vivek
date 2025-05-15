@@ -18,6 +18,8 @@ import {
   SiTailwindcss,
   SiStreamlit,
   SiNextdotjs,
+  SiPostgresql,
+  SiClerk,
 } from 'react-icons/si'
 
 const Projects = () => {
@@ -31,7 +33,6 @@ const Projects = () => {
         { name: 'JavaScript', icon: SiJavascript, color: '#F7DF1E' },
       ],
       github: 'https://github.com/Viveknathtiwari01/Weather-app',
-      live: 'https://weather-app-demo.com',
       image: '/projects/weather-app.png',
     },
     {
@@ -39,10 +40,10 @@ const Projects = () => {
       description: 'A chat application with real-time messaging, user authentication, one-to-one chat, group chat, real-time chat with ChatGPT using OpenAI API, real-time image generation using DALL-E API, and a clean UI.',
       techStack: [
         { name: 'Node.js', icon: SiNodedotjs, color: '#339933' },
-        { name: 'Express', icon: SiExpress, color: '#000000' },
+        { name: 'Express', icon: SiExpress, color: '#339933' },
         { name: 'MongoDB', icon: SiMongodb, color: '#47A248' },
-        { name: 'OpenAI', icon: SiOpenai, color: '#000000' },
-        { name: 'DALL-E', icon: SiOpenai, color: '#000000' },
+        { name: 'OpenAI', icon: SiOpenai, color: '#10A37F' },
+        { name: 'DALL-E', icon: SiOpenai, color: '#10A37F' },
         { name: 'React', icon: SiReact, color: '#61DAFB' },
         { name: 'Tailwind CSS', icon: SiTailwindcss, color: '#38BDF8' },
         
@@ -68,12 +69,12 @@ const Projects = () => {
       techStack: [
         { name: 'Python', icon: SiPython, color: '#3776AB' },
         { name: 'Scikit-learn', icon: SiScikitlearn, color: '#F7931E' },
-        { name: 'Next Js', icon: SiNextdotjs, color: '#000000' },
+        { name: 'Next Js', icon: SiNextdotjs, color: '#03045E' },
         { name: 'React', icon: SiReact, color: '#61DAFB' },
         { name: 'Node.js', icon: SiNodedotjs, color: '#339933' },
-        { name: 'Express', icon: SiExpress, color: '#000000' },
+        { name: 'Express', icon: SiExpress, color: '#339933' },
         { name: 'MongoDB', icon: SiMongodb, color: '#47A248' },
-        { name: 'OpenAI', icon: SiOpenai, color: '#000000' },
+        { name: 'OpenAI', icon: SiOpenai, color: '#10A37F' },
       ],
       github: 'https://github.com/Viveknathtiwari01/AI_MOCK_INTERVIEWER',
       image: '/projects/movies-app.png',
@@ -82,11 +83,14 @@ const Projects = () => {
       title: 'AI-Powered Career Coach',
       description: 'An AI-powered career coach that helps you to find jobs insights, market trends, mock interview preparation, resume builder, and cover letter builder.',
       techStack: [
-        { name: 'React', icon: SiReact, color: '#61DAFB' },
-        { name: 'Node.js', icon: SiNodedotjs, color: '#339933' },
-        { name: 'Gemini API', icon: SiGoogle, color: '#000000' },
+        { name: 'React Js', icon: SiReact, color: '#61DAFB' },
+        { name: 'Next js', icon: SiNextdotjs, color: '#03045E' },
+        { name: 'Gemini API', icon: SiGoogle, color: '#4285F4' },
+        { name: 'Tailwind CSS', icon: SiTailwindcss, color: '#38BDF8' },
+        { name: 'NeonDB', icon: SiPostgresql, color: '#336791' },
+        { name: 'Clerk', icon: SiClerk, color: '#000000' },
       ],
-      github: 'https://github.com/yourusername/ai-interviewer',
+      github: 'https://github.com/Viveknathtiwari01/AI_MOCK_INTERVIEWER',
       live: 'https://ai-career-coach-55ye.vercel.app/',
       image: '/projects/ai-interviewer.png',
     },
