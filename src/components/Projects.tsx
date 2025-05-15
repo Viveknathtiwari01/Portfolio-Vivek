@@ -69,7 +69,7 @@ const Projects = () => {
       techStack: [
         { name: 'Python', icon: SiPython, color: '#3776AB' },
         { name: 'Scikit-learn', icon: SiScikitlearn, color: '#F7931E' },
-        { name: 'Next Js', icon: SiNextdotjs, color: '#03045E' },
+        { name: 'Next Js', icon: SiNextdotjs, color: '#61DAFB' },
         { name: 'React', icon: SiReact, color: '#61DAFB' },
         { name: 'Node.js', icon: SiNodedotjs, color: '#339933' },
         { name: 'Express', icon: SiExpress, color: '#339933' },
@@ -84,11 +84,11 @@ const Projects = () => {
       description: 'An AI-powered career coach that helps you to find jobs insights, market trends, mock interview preparation, resume builder, and cover letter builder.',
       techStack: [
         { name: 'React Js', icon: SiReact, color: '#61DAFB' },
-        { name: 'Next js', icon: SiNextdotjs, color: '#03045E' },
-        { name: 'Gemini API', icon: SiGoogle, color: '#4285F4' },
+        { name: 'Next js', icon: SiNextdotjs, color: '#61DAFB' },
+        { name: 'Gemini API', icon: SiGoogle, color: '#10A37F' },
         { name: 'Tailwind CSS', icon: SiTailwindcss, color: '#38BDF8' },
         { name: 'NeonDB', icon: SiPostgresql, color: '#336791' },
-        { name: 'Clerk', icon: SiClerk, color: '#000000' },
+        { name: 'Clerk', icon: SiClerk, color: '#E34F26' },
       ],
       github: 'https://github.com/Viveknathtiwari01/AI_MOCK_INTERVIEWER',
       live: 'https://ai-career-coach-55ye.vercel.app/',
