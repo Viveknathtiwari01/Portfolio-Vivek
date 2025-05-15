@@ -33,7 +33,7 @@ const Projects = () => {
         { name: 'JavaScript', icon: SiJavascript, color: '#F7DF1E' },
       ],
       github: 'https://github.com/Viveknathtiwari01/Weather-app',
-      image: '/projects/weather-app.png',
+      image: '/projects/weather.jpeg',
     },
     {
       title: 'CHATVERSE',
@@ -49,7 +49,7 @@ const Projects = () => {
         
       ],
       github: 'https://github.com/Viveknathtiwari01/CHATVERSE',
-      image: '/projects/contacts-app.png',
+      image: '/projects/chatverse.png',
     },
     {
       title: 'WhatsApp Chat Analyzer',
@@ -61,7 +61,7 @@ const Projects = () => {
         { name: 'Streamlit', icon: SiStreamlit, color: '#FF6F00' },
       ],
       github: 'https://github.com/Viveknathtiwari01/WhatsApp-Chat-Analysis',
-      image: '/projects/chat-analyzer.png',
+      image: '/projects/whatsapp-chat.png',
     },
     {
       title: 'AI Mock Interviewer',
@@ -77,7 +77,7 @@ const Projects = () => {
         { name: 'OpenAI', icon: SiOpenai, color: '#10A37F' },
       ],
       github: 'https://github.com/Viveknathtiwari01/AI_MOCK_INTERVIEWER',
-      image: '/projects/movies-app.png',
+      image: '/projects/ai-interviwer.png',
     },
     {
       title: 'AI-Powered Career Coach',
@@ -92,7 +92,7 @@ const Projects = () => {
       ],
       github: 'https://github.com/Viveknathtiwari01/AI_MOCK_INTERVIEWER',
       live: 'https://ai-career-coach-55ye.vercel.app/',
-      image: '/projects/ai-interviewer.png',
+      image: '/projects/ai-career-coach.png',
     },
   ]
 
