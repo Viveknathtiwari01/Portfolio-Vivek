@@ -20,20 +20,56 @@ import {
   SiNextdotjs,
   SiPostgresql,
   SiClerk,
+  SiFlask,
+  SiDocker,
+  SiFiles,
 } from 'react-icons/si'
+import { BsFiletypePdf } from 'react-icons/bs'
 
 const Projects = () => {
   const projects = [
     {
-      title: 'Weather App',
-      description: 'A weather forecast web application using OpenWeatherMap API with real-time weather data and responsive design.',
+      title: 'WhatsApp Chat Analyzer',
+      description: 'Machine learning-based chat analysis tool for WhatsApp conversations. Analyzes the chat data and provides insights about the user with sentiment analysis, word frequency, and more.',
       techStack: [
-        { name: 'HTML5', icon: SiHtml5, color: '#E34F26' },
-        { name: 'CSS3', icon: SiCss3, color: '#1572B6' },
-        { name: 'JavaScript', icon: SiJavascript, color: '#F7DF1E' },
+        { name: 'Python', icon: SiPython, color: '#3776AB' },
+        { name: 'TensorFlow', icon: SiTensorflow, color: '#FF6F00' },
+        { name: 'Scikit-learn', icon: SiScikitlearn, color: '#F7931E' },
+        { name: 'Streamlit', icon: SiStreamlit, color: '#FF6F00' },
       ],
-      github: 'https://github.com/Viveknathtiwari01/Weather-app',
-      image: '/projects/weather-app.png',
+      github: 'https://github.com/Viveknathtiwari01/WhatsApp-Chat-Analysis',
+      image: '/projects/whatsapp_chat_analyzer.png',
+    },
+    {
+      title: 'AI-Powered Career Coach',
+      description: 'An AI-powered career coach that helps you to find jobs insights, market trends, mock interview preparation, resume builder, and cover letter builder.',
+      techStack: [
+        { name: 'React Js', icon: SiReact, color: '#61DAFB' },
+        { name: 'Next js', icon: SiNextdotjs, color: '#61DAFB' },
+        { name: 'Gemini API', icon: SiGoogle, color: '#4285F4' },
+        { name: 'Tailwind CSS', icon: SiTailwindcss, color: '#38BDF8' },
+        { name: 'NeonDB', icon: SiPostgresql, color: '#336791' },
+        { name: 'Clerk', icon: SiClerk, color: '#E34F26' },
+      ],
+      github: 'https://github.com/Viveknathtiwari01/AI_MOCK_INTERVIEWER',
+      live: 'https://ai-career-coach-55ye.vercel.app/',
+      image: '/projects/ai-career-coach.png',
+    },
+    {
+      title: 'Quotation Generation Sysytem',
+      description: 'Dynamic web app for creating customizable quotations with image insertion, product management, and secure user authentication. Features PDF upload and parsing, AI-powered content analysis, and real-time PDF generation. ',
+      techStack: [
+        { name: 'Python', icon: SiPython, color: '#3776AB' },
+        { name: 'Flask', icon: SiFlask, color: '#FF0000' },
+        { name: 'MongoDB', icon: SiMongodb, color: '#47A248' },
+        { name: 'ReportLab', icon: SiFiles, color: '#FF0000' },
+        { name: 'pdf2image', icon: BsFiletypePdf, color: '#FF0000' },
+        { name: 'OpenAI API', icon: SiOpenai, color: '#10A37F' },
+        { name: 'Docker', icon: SiDocker, color: '#2496ED' },
+        { name: 'HTML/CSS', icon: SiHtml5, color: '#E34F26' },
+      ],
+      live: 'https://pragati-enterprises.dev-server.karvatech.com/login?next=%2F',
+      image: '/projects/pragati.png',
     },
     {
       title: 'CHATVERSE',
@@ -50,25 +86,14 @@ const Projects = () => {
       github: 'https://github.com/Viveknathtiwari01/CHATVERSE',
       image: '/projects/chatverse.png',
     },
-    {
-      title: 'WhatsApp Chat Analyzer',
-      description: 'Machine learning-based chat analysis tool for WhatsApp conversations. Analyzes the chat data and provides insights about the user with sentiment analysis, word frequency, and more.',
-      techStack: [
-        { name: 'Python', icon: SiPython, color: '#3776AB' },
-        { name: 'TensorFlow', icon: SiTensorflow, color: '#FF6F00' },
-        { name: 'Scikit-learn', icon: SiScikitlearn, color: '#F7931E' },
-        { name: 'Streamlit', icon: SiStreamlit, color: '#FF6F00' },
-      ],
-      github: 'https://github.com/Viveknathtiwari01/WhatsApp-Chat-Analysis',
-      image: '/projects/whatsapp_chat_analyzer.png',
-    },
+    
     {
       title: 'AI Mock Interviewer',
       description: 'An AI-powered mock interviewer that helps you to prepare for your interviews with personalized suggestions.',
       techStack: [
         { name: 'Python', icon: SiPython, color: '#3776AB' },
         { name: 'Scikit-learn', icon: SiScikitlearn, color: '#F7931E' },
-        { name: 'Next Js', icon: SiNextdotjs, color: '#03045E' },
+        { name: 'Next Js', icon: SiNextdotjs, color: '#61DAFB' },
         { name: 'React', icon: SiReact, color: '#61DAFB' },
         { name: 'Node.js', icon: SiNodedotjs, color: '#339933' },
         { name: 'Express', icon: SiExpress, color: '#339933' },
@@ -79,19 +104,15 @@ const Projects = () => {
       image: '/projects/ai-interviewer.png',
     },
     {
-      title: 'AI-Powered Career Coach',
-      description: 'An AI-powered career coach that helps you to find jobs insights, market trends, mock interview preparation, resume builder, and cover letter builder.',
+      title: 'Weather App',
+      description: 'A weather forecast web application using OpenWeatherMap API with real-time weather data and responsive design.',
       techStack: [
-        { name: 'React Js', icon: SiReact, color: '#61DAFB' },
-        { name: 'Next js', icon: SiNextdotjs, color: '#03045E' },
-        { name: 'Gemini API', icon: SiGoogle, color: '#4285F4' },
-        { name: 'Tailwind CSS', icon: SiTailwindcss, color: '#38BDF8' },
-        { name: 'NeonDB', icon: SiPostgresql, color: '#336791' },
-        { name: 'Clerk', icon: SiClerk, color: '#E34F26' },
+        { name: 'HTML5', icon: SiHtml5, color: '#E34F26' },
+        { name: 'CSS3', icon: SiCss3, color: '#1572B6' },
+        { name: 'JavaScript', icon: SiJavascript, color: '#F7DF1E' },
       ],
-      github: 'https://github.com/Viveknathtiwari01/AI_MOCK_INTERVIEWER',
-      live: 'https://ai-career-coach-55ye.vercel.app/',
-      image: '/projects/ai-career-coach.png',
+      github: 'https://github.com/Viveknathtiwari01/Weather-app',
+      image: '/projects/weather-app.png',
     },
   ]
 
