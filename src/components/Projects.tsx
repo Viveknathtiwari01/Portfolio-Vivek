@@ -60,12 +60,13 @@ const Projects = () => {
       description: 'Dynamic web app for creating customizable quotations with image insertion, product management, and secure user authentication. Features PDF upload and parsing, AI-powered content analysis, and real-time PDF generation. ',
       techStack: [
         { name: 'Python', icon: SiPython, color: '#3776AB' },
-        { name: 'Flask', icon: SiFlask, color: '#FF0000' },
+        { name: 'Docker', icon: SiDocker, color: '#2496ED' },
         { name: 'MongoDB', icon: SiMongodb, color: '#47A248' },
         { name: 'ReportLab', icon: SiFiles, color: '#FF0000' },
         { name: 'pdf2image', icon: BsFiletypePdf, color: '#FF0000' },
+        { name: 'Flask', icon: SiFlask, color: '#FF0000' },
         { name: 'OpenAI API', icon: SiOpenai, color: '#10A37F' },
-        { name: 'Docker', icon: SiDocker, color: '#2496ED' },
+        
         { name: 'HTML/CSS', icon: SiHtml5, color: '#E34F26' },
       ],
       live: 'https://pragati-enterprises.dev-server.karvatech.com/login?next=%2F',
