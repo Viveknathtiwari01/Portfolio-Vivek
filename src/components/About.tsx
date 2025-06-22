@@ -61,7 +61,7 @@ const About = () => {
           >
             <div className="relative aspect-square rounded-2xl overflow-hidden">
               <Image
-                src="/IMG-20250428-WA0011.jpg"
+                src="/profile_3.jpg"
                 alt="Profile"
                 fill
                 className="object-cover"
