@@ -23,25 +23,33 @@ import {
   SiFlask,
   SiDocker,
   SiFiles,
+  SiTypescript,
+  SiPrisma,
+  SiMysql,
 } from 'react-icons/si'
 import { BsFiletypePdf } from 'react-icons/bs'
 
 const Projects = () => {
   const projects = [
     {
-      title: 'WhatsApp Chat Analyzer',
-      description: 'Machine learning-based chat analysis tool for WhatsApp conversations. Analyzes the chat data and provides insights about the user with sentiment analysis, word frequency, and more.',
+      title: 'FitFussion – AI Wellness & Lifestyle Tracker',
+      description: 'A full-stack AI wellness platform that helps users manage daily habits, track mood and goals, get personalized meal/workout plans, and chat with an AI wellness coach powered by Gemini 2.0 Flash.',
       techStack: [
-        { name: 'Python', icon: SiPython, color: '#3776AB' },
-        { name: 'TensorFlow', icon: SiTensorflow, color: '#FF6F00' },
-        { name: 'Scikit-learn', icon: SiScikitlearn, color: '#F7931E' },
-        { name: 'Streamlit', icon: SiStreamlit, color: '#FF6F00' },
+        { name: 'Next.js', icon: SiNextdotjs, color: '#61DAFB' },
+        { name: 'TypeScript', icon: SiTypescript, color: '#3178C6' },
+        { name: 'Clerk', icon: SiClerk, color: '#3B49DF' },
+        { name: 'MySQL', icon: SiMysql, color: '#00758F' },
+        { name: 'Express.js', icon: SiExpress, color: '#47A248' },
+        { name: 'Prisma ORM', icon: SiPrisma, color: '#10A37F' },
+        { name: 'Tailwind CSS', icon: SiTailwindcss, color: '#38BDF8' },
+        { name: 'Gemini API', icon: SiGoogle, color: '#4285F4' },
       ],
-      github: 'https://github.com/Viveknathtiwari01/WhatsApp-Chat-Analysis',
-      image: '/projects/whatsapp_chat_analyzer.png',
+      github: 'https://github.com/Viveknathtiwari01/Personalized-health-website',
+      live: 'https://wellnex.vercel.app/',
+      image: '/projects/FitFussion.png', 
     },
     {
-      title: 'AI-Powered Career Coach',
+      title: 'HireMind - AI Powered Career Coach',
       description: 'An AI-powered career coach that helps you to find jobs insights, market trends, mock interview preparation, resume builder, and cover letter builder.',
       techStack: [
         { name: 'React Js', icon: SiReact, color: '#61DAFB' },
@@ -53,7 +61,7 @@ const Projects = () => {
       ],
       github: 'https://github.com/Viveknathtiwari01/AI_MOCK_INTERVIEWER',
       live: 'https://ai-career-coach-55ye.vercel.app/',
-      image: '/projects/ai-career-coach.png',
+      image: '/projects/hiremind.png',
     },
     {
       title: 'Quotation Generation Sysytem',
@@ -71,6 +79,18 @@ const Projects = () => {
       ],
       live: 'https://pragati-enterprises.dev-server.karvatech.com/login?next=%2F',
       image: '/projects/pragati.png',
+    },
+    {
+      title: 'WhatsApp Chat Analyzer',
+      description: 'Machine learning-based chat analysis tool for WhatsApp conversations. Analyzes the chat data and provides insights about the user with sentiment analysis, word frequency, and more.',
+      techStack: [
+        { name: 'Python', icon: SiPython, color: '#3776AB' },
+        { name: 'TensorFlow', icon: SiTensorflow, color: '#FF6F00' },
+        { name: 'Scikit-learn', icon: SiScikitlearn, color: '#F7931E' },
+        { name: 'Streamlit', icon: SiStreamlit, color: '#FF6F00' },
+      ],
+      github: 'https://github.com/Viveknathtiwari01/WhatsApp-Chat-Analysis',
+      image: '/projects/whatsapp_chat_analyzer.png',
     },
     {
       title: 'CHATVERSE',

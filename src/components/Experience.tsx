@@ -5,10 +5,23 @@ import { motion } from 'framer-motion'
 const Experience = () => {
   const experiences = [
     {
+      title: 'Full Stack Developer Intern (AI & ML)',
+      company: 'SmartData Enterprises in collaboration KarvaTech Solutions',
+      location: 'Lucknow',
+      period: 'Mar 2025 - Present',
+      description: [
+        'Completed a 6-month intensive training program focused on Full Stack Web Development integrated with AI & ML techniques.',
+        'Built dynamic web applications using modern stacks including Streamlit and Flask.',
+        'Worked on practical projects involving machine learning workflows such as data preprocessing, model building, and intelligent system integration.',
+        'Applied key ML techniques using Python, TensorFlow, and Scikit-learn to build and deploy predictive and NLP-based solutions.',
+        'Collaborated in cross-functional teams to design scalable, responsive, and AI-enhanced web platforms.',
+      ],
+    },
+    {
       title: 'Full Stack Developer Intern',
       company: 'KarvaTech Solutions',
       location: 'Lucknow',
-      period: '6 months',
+      period: 'Sep 2024 - Mar 2025 (6 months)',
       description: [
         'Successfully completed 6 months of hands-on experience in automation and design-focused projects.',
         'Designed and built a product catalog page and a responsive website for Coromass Crop Care Industries.',
@@ -19,7 +32,7 @@ const Experience = () => {
       title: 'Web Developer Intern',
       company: 'SoftPro India Computer Technology',
       location: 'Lucknow',
-      period: '3 months',
+      period: 'Feb 2024 - May 2024 (3 months)',
       description: [
         'Learned and implemented new technologies to develop responsive and mobile-friendly web applications.',
         'Worked on small-scale projects, gaining practical experience in web development.',

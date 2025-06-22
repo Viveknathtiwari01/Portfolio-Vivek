@@ -43,7 +43,7 @@ const Contact = () => {
           from_email: formData.from_email,
           subject: formData.subject,
           message: formData.message,
-          to_email: 'viveknath62094@gmail.com', // Add recipient email
+          to_email: 'viveknath62094@gmail.com', 
         }
       )
 
@@ -64,7 +64,7 @@ const Contact = () => {
     {
       name: 'Download Resume',
       icon: FaFileDownload,
-      href: '/Vivek_Resume_2025.pdf',
+      href: '/Vivek_Resume_June_update_25.pdf',
       download: true,
     },
     {
