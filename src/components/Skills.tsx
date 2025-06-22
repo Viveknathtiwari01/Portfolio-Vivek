@@ -30,6 +30,7 @@ import {
   SiPostman,
   SiVercel,
   SiClerk,
+  SiPrisma,
 } from 'react-icons/si'
 import { SiNextdotjs } from 'react-icons/si'
 
@@ -44,7 +45,7 @@ const Skills = () => {
     { name: 'TypeScript', icon: SiTypescript, color: '#3178C6', category: 'Programming' },
     { name: 'JavaScript', icon: FaJs, color: '#F7DF1E', category: 'Programming' },
     { name: 'Express.js', icon: SiExpress, color: '#000000', category: 'Backend' },
-   {name:'Prisma ORM',icon:SiTypescript,color:'#2D3748',category:'Backend'},
+   {name:'Prisma ORM',icon:SiPrisma,color:'#2D3748',category:'Backend'},
     { name: 'MongoDB', icon: SiMongodb, color: '#47A248', category: 'Database' },
     { name: 'MySQL', icon: SiMysql, color: '#4479A1', category: 'Database' },
     {name:'MongoDB Atlas',icon:SiMongodb,color:'#47A248',category:'Database'},
