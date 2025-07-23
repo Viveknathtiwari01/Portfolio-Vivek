@@ -46,8 +46,7 @@ const About = () => {
         >
           <h2 className="heading-primary">About Me</h2>
           <p className="paragraph max-w-3xl mx-auto">
-            I'm a passionate software developer with a keen interest in building innovative solutions
-            that make a difference.
+            I'm a passionate software developer with a strong interest in machine learning and AI, dedicated to building innovative, intelligent solutions that solve real-world problems and create meaningful impact.
           </p>
         </motion.div>
 
@@ -82,18 +81,16 @@ const About = () => {
           >
             <div className="prose dark:prose-invert max-w-none">
               <p>
-                Hello! I'm a software developer with a passion for creating elegant solutions to complex
-                problems. My journey in tech started during my university years, and I've been hooked
-                ever since.
+                Hello! I'm a software developer deeply passionate about building intelligent and elegant solutions that merge the power of modern web technologies with machine learning.
               </p>
               <p>
-                I specialize in full-stack development with a focus on modern web technologies and
-                machine learning applications. I love learning new technologies and applying them to
-                solve real-world problems.
+                My journey in tech began during my university days, where I discovered a keen interest in AI and data-driven applications. Since then, I’ve been dedicated to developing full-stack applications and integrating machine learning models to solve real-world problems—from health & wellness platforms to data analysis tools.
               </p>
               <p>
-                When I'm not coding, you can find me exploring new technologies, contributing to open
-                source projects, or sharing my knowledge through technical blog posts.
+                I specialize in full-stack development and have hands-on experience with machine learning frameworks like Scikit-learn, TensorFlow, and NLP libraries. I enjoy exploring the intersection of AI and user experience to deliver smart, impactful products.
+              </p>
+              <p>
+                When I'm not coding, you’ll find me experimenting with new AI models, contributing to open-source projects, or writing technical blogs to share what I learn with the community.
               </p>
             </div>
 

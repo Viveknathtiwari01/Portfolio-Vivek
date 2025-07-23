@@ -26,7 +26,7 @@ const Hero = () => {
               <a href="#contact" className="button-primary">
                 Get in Touch
               </a>
-              <a href="#projects" className="button-secondary hover:bg-green-500 hover:text-white transition-colors duration-1200">
+              <a href="#projects" className="button-secondary hover:text-purple-500 transition-colors duration-1200">
                 View My Work
               </a>
             </div>

@@ -1,6 +1,6 @@
-'use client'
+"use client";
 
-import { motion } from 'framer-motion'
+import { motion } from "framer-motion";
 import {
   FaReact,
   FaNodeJs,
@@ -13,7 +13,7 @@ import {
   FaDocker,
   FaAws,
   FaDatabase,
-} from 'react-icons/fa'
+} from "react-icons/fa";
 import {
   SiTypescript,
   SiExpress,
@@ -31,38 +31,122 @@ import {
   SiVercel,
   SiClerk,
   SiPrisma,
-} from 'react-icons/si'
-import { SiNextdotjs } from 'react-icons/si'
+} from "react-icons/si";
+import { SiNextdotjs } from "react-icons/si";
 
 const Skills = () => {
   const skills = [
-    { name: 'React', icon: FaReact, color: '#61DAFB', category: 'Frontend' },
-    { name: 'Node.js', icon: FaNodeJs, color: '#339933', category: 'Backend' },
-    {name:'C',icon:FaJs,color:'#A8B400',category:'Programming'},
-    { name: 'Python', icon: FaPython, color: '#3776AB', category: 'Programming' },
-    {name:'Next.js',icon:SiNextdotjs,color:'#000000',category:'Frontend'},
-    { name: 'Java Core', icon: FaJava, color: '#007396', category: 'Programming' },
-    { name: 'TypeScript', icon: SiTypescript, color: '#3178C6', category: 'Programming' },
-    { name: 'JavaScript', icon: FaJs, color: '#F7DF1E', category: 'Programming' },
-    { name: 'Express.js', icon: SiExpress, color: '#000000', category: 'Backend' },
-   {name:'Prisma ORM',icon:SiPrisma,color:'#2D3748',category:'Backend'},
-    { name: 'MongoDB', icon: SiMongodb, color: '#47A248', category: 'Database' },
-    { name: 'MySQL', icon: SiMysql, color: '#4479A1', category: 'Database' },
-    {name:'MongoDB Atlas',icon:SiMongodb,color:'#47A248',category:'Database'},
-    { name: 'HTML5', icon: FaHtml5, color: '#E34F26', category: 'Frontend' },
-    { name: 'CSS3', icon: FaCss3Alt, color: '#1572B6', category: 'Frontend' },
-    { name: 'TailwindCSS', icon: SiTailwindcss, color: '#06B6D4', category: 'Frontend' },
-    { name: 'Bootstrap', icon: SiBootstrap, color: '#7952B3', category: 'Frontend' },
-    { name: 'Git', icon: FaGitAlt, color: '#F05032', category: 'Tools' },
-    { name: 'Docker', icon: FaDocker, color: '#2496ED', category: 'Tools' },
-    {name:'Postman',icon:SiPostman,color:'#FF6C37',category:'Tools'},
-    {name:'Vercel',icon:SiVercel,color:'#000000',category:'Tools'},
-    {name:'Clerk',icon:SiClerk,color:'#000000',category:'Tools'},
-    { name: 'TensorFlow', icon: SiTensorflow, color: '#FF6F00', category: 'AI/ML' },
-    { name: 'Scikit-learn', icon: SiScikitlearn, color: '#F7931E', category: 'AI/ML' },
-  ]
+    { name: "React", icon: FaReact, color: "#61DAFB", category: "Frontend" },
+    { name: "Node.js", icon: FaNodeJs, color: "#339933", category: "Backend" },
+    { name: "C", icon: FaJs, color: "#A8B400", category: "Programming" },
+    {
+      name: "Python",
+      icon: FaPython,
+      color: "#3776AB",
+      category: "Programming",
+    },
+    {
+      name: "Next.js",
+      icon: SiNextdotjs,
+      color: "#000000",
+      category: "Frontend",
+    },
+    {
+      name: "Java Core",
+      icon: FaJava,
+      color: "#007396",
+      category: "Programming",
+    },
+    {
+      name: "TypeScript",
+      icon: SiTypescript,
+      color: "#3178C6",
+      category: "Programming",
+    },
+    {
+      name: "JavaScript",
+      icon: FaJs,
+      color: "#F7DF1E",
+      category: "Programming",
+    },
+    {
+      name: "Express.js",
+      icon: SiExpress,
+      color: "#000000",
+      category: "Backend",
+    },
+    {
+      name: "Prisma ORM",
+      icon: SiPrisma,
+      color: "#2D3748",
+      category: "Database",
+    },
+    {
+      name: "MongoDB",
+      icon: SiMongodb,
+      color: "#47A248",
+      category: "Database",
+    },
+    { name: "MySQL", icon: SiMysql, color: "#4479A1", category: "Database" },
+    {
+      name: "MongoDB Atlas",
+      icon: SiMongodb,
+      color: "#47A248",
+      category: "Database",
+    },
+    { name: "HTML5", icon: FaHtml5, color: "#E34F26", category: "Frontend" },
+    { name: "CSS3", icon: FaCss3Alt, color: "#1572B6", category: "Frontend" },
+    {
+      name: "TailwindCSS",
+      icon: SiTailwindcss,
+      color: "#06B6D4",
+      category: "Frontend",
+    },
+    {
+      name: "Bootstrap",
+      icon: SiBootstrap,
+      color: "#7952B3",
+      category: "Frontend",
+    },
+    { name: "GitHub", icon: FaGitAlt, color: "#151414ff", category: "Tools" },
+    { name: "Postman", icon: SiPostman, color: "#FF6C37", category: "Tools" },
+    { name: "Vercel", icon: SiVercel, color: "#000000", category: "Tools" },
+    { name: "Clerk", icon: SiClerk, color: "#000000", category: "Tools" },
+    {
+      name: "TensorFlow",
+      icon: SiTensorflow,
+      color: "#FF6F00",
+      category: "AI/ML",
+    },
+    {
+      name: "Scikit-learn",
+      icon: SiScikitlearn,
+      color: "#F7931E",
+      category: "AI/ML",
+    },
+    {
+      name: "Pandas",
+      icon: SiScikitlearn,
+      color: "#6148c7ff",
+      category: "AI/ML",
+    },
+    {
+      name: "NumPy",
+      icon: SiScikitlearn,
+      color: "#47c5eeff",
+      category: "AI/ML",
+    },
+    {
+      name: "Matplotlib",
+      icon: SiScikitlearn,
+      color: "#C72C48",
+      category: "AI/ML",
+    },
+    { name: "NLP", icon: SiScikitlearn, color: "#F7931E", category: "AI/ML" },
+    { name: "NLTK", icon: SiScikitlearn, color: "#F7931E", category: "AI/ML" },
+  ];
 
-  const categories = Array.from(new Set(skills.map((skill) => skill.category)))
+  const categories = Array.from(new Set(skills.map((skill) => skill.category)));
 
   const container = {
     hidden: { opacity: 0 },
@@ -72,12 +156,12 @@ const Skills = () => {
         staggerChildren: 0.1,
       },
     },
-  }
+  };
 
   const item = {
     hidden: { opacity: 0, scale: 0.8 },
     show: { opacity: 1, scale: 1 },
-  }
+  };
 
   return (
     <section id="skills" className="py-20 bg-gray-50 dark:bg-gray-900">
@@ -91,8 +175,8 @@ const Skills = () => {
         >
           <h2 className="heading-primary">Technical Skills</h2>
           <p className="paragraph max-w-3xl mx-auto">
-            I have experience with a wide range of technologies and tools. Here are some of my key
-            technical skills:
+            I have experience with a wide range of technologies and tools. Here
+            are some of my key technical skills:
           </p>
         </motion.div>
 
@@ -139,7 +223,7 @@ const Skills = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Skills
+export default Skills;

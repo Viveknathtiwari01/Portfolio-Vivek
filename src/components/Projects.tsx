@@ -1,7 +1,7 @@
-'use client'
+"use client";
 
-import { motion } from 'framer-motion'
-import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa'
+import { motion } from "framer-motion";
+import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import {
   SiReact,
   SiNodedotjs,
@@ -26,116 +26,152 @@ import {
   SiTypescript,
   SiPrisma,
   SiMysql,
-} from 'react-icons/si'
-import { BsFiletypePdf } from 'react-icons/bs'
+  SiPandas,
+  SiSequelize,
+  SiPlotly,
+  SiNumpy,
+  SiDatadog,
+} from "react-icons/si";
+import { BsFiletypePdf } from "react-icons/bs";
 
 const Projects = () => {
   const projects = [
     {
-      title: 'FitFussion – AI Wellness & Lifestyle Tracker',
-      description: 'A full-stack AI wellness platform that helps users manage daily habits, track mood and goals, get personalized meal/workout plans, and chat with an AI wellness coach powered by Gemini 2.0 Flash.',
+      title: "WhatsApp Chat Analysis – AI-Driven Conversational Insight Tool",
+      description:
+        "A Machine Learning project that analyzes exported WhatsApp chat files to extract valuable insights such as most active users, sentiment trends, emoji usage, word clouds, and peak activity times using Python and NLP techniques.",
       techStack: [
-        { name: 'Next.js', icon: SiNextdotjs, color: '#61DAFB' },
-        { name: 'TypeScript', icon: SiTypescript, color: '#3178C6' },
-        { name: 'Clerk', icon: SiClerk, color: '#3B49DF' },
-        { name: 'MySQL', icon: SiMysql, color: '#00758F' },
-        { name: 'Express.js', icon: SiExpress, color: '#47A248' },
-        { name: 'Prisma ORM', icon: SiPrisma, color: '#10A37F' },
-        { name: 'Tailwind CSS', icon: SiTailwindcss, color: '#38BDF8' },
-        { name: 'Gemini API', icon: SiGoogle, color: '#4285F4' },
+        { name: "Python", icon: SiPython, color: "#3776AB" },
+        { name: "Pandas", icon: SiPandas, color: "#704ff4ff" },
+        { name: "Matplotlib", icon: SiPlotly, color: "#3b6ee6ff" },
+        { name: "Seaborn", icon: SiSequelize, color: "#00B4D8" },
+        { name: "NLTK", icon: SiNumpy, color: "#A54399" },
+        { name: "TensorFlow", icon: SiTensorflow, color: "#FF6F00" },
+        { name: "Streamlit", icon: SiStreamlit, color: "#FF4B4B" },
+        { name: "WordCloud", icon: SiPython, color: "#0E76A8" },
       ],
-      github: 'https://github.com/Viveknathtiwari01/Personalized-health-website',
-      live: 'https://wellnex.vercel.app/',
-      image: '/projects/FitFussion.png', 
+      github:
+        "https://github.com/Viveknathtiwari01/WhatsApp_Chat_Anaysis_Updated",
+      live: "https://whatsapp-chat-anaysis-vivek.streamlit.app/upload_file",
+      image: "/projects/WhatsappChat.png",
     },
     {
-      title: 'HireMind - AI Powered Career Coach',
-      description: 'An AI-powered career coach that helps you to find jobs insights, market trends, mock interview preparation, resume builder, and cover letter builder.',
+      title: "Disease Diagnosis AI – Symptom-Based Health Prediction System",
+      description:
+        "An AI-powered system that predicts potential diseases based on user-input symptoms using machine learning algorithms and a custom-trained model. Built with Python and deployed using a simple web interface.",
       techStack: [
-        { name: 'React Js', icon: SiReact, color: '#61DAFB' },
-        { name: 'Next js', icon: SiNextdotjs, color: '#61DAFB' },
-        { name: 'Gemini API', icon: SiGoogle, color: '#4285F4' },
-        { name: 'Tailwind CSS', icon: SiTailwindcss, color: '#38BDF8' },
-        { name: 'NeonDB', icon: SiPostgresql, color: '#336791' },
-        { name: 'Clerk', icon: SiClerk, color: '#E34F26' },
+        { name: "Python", icon: SiPython, color: "#3776AB" },
+        { name: "Scikit-learn", icon: SiScikitlearn, color: "#F7931E" },
+        { name: "Pandas", icon: SiPandas, color: "#856bebff" },
+        { name: "NumPy", icon: SiNumpy, color: "#1caadaff" },
+        { name: "Streamlit", icon: SiStreamlit, color: "#FF4B4B" },
+        { name: "Matplotlib", icon: SiPlotly, color: "#3b6ee6ff" },
+        { name: "CSV Dataset", icon: SiDatadog, color: "#EE4C2C" },
       ],
-      github: 'https://github.com/Viveknathtiwari01/AI_MOCK_INTERVIEWER',
-      live: 'https://ai-career-coach-55ye.vercel.app/',
-      image: '/projects/hiremind.png',
+      github: "https://github.com/Viveknathtiwari01/Disease-detection-system",
+      live: "https://disease-detection-system-vivek.streamlit.app/",
+      image: "/projects/disease_detection.png",
     },
     {
-      title: 'Quotation Generation Sysytem',
-      description: 'Dynamic web app for creating customizable quotations with image insertion, product management, and secure user authentication. Features PDF upload and parsing, AI-powered content analysis, and real-time PDF generation. ',
+      title: "FitFussion – AI Wellness & Lifestyle Tracker",
+      description:
+        "A full-stack AI wellness platform that helps users manage daily habits, track mood and goals, get personalized meal/workout plans, and chat with an AI wellness coach powered by Gemini 2.0 Flash.",
       techStack: [
-        { name: 'Python', icon: SiPython, color: '#3776AB' },
-        { name: 'Docker', icon: SiDocker, color: '#2496ED' },
-        { name: 'MongoDB', icon: SiMongodb, color: '#47A248' },
-        { name: 'ReportLab', icon: SiFiles, color: '#FF0000' },
-        { name: 'pdf2image', icon: BsFiletypePdf, color: '#FF0000' },
-        { name: 'Flask', icon: SiFlask, color: '#FF0000' },
-        { name: 'OpenAI API', icon: SiOpenai, color: '#10A37F' },
-        
-        { name: 'HTML/CSS', icon: SiHtml5, color: '#E34F26' },
+        { name: "Next.js", icon: SiNextdotjs, color: "#61DAFB" },
+        { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
+        { name: "Clerk", icon: SiClerk, color: "#3B49DF" },
+        { name: "MySQL", icon: SiMysql, color: "#39b7d3ff" },
+        { name: "Express.js", icon: SiExpress, color: "#47A248" },
+        { name: "Prisma ORM", icon: SiPrisma, color: "#10A37F" },
+        { name: "Tailwind CSS", icon: SiTailwindcss, color: "#38BDF8" },
+        { name: "Gemini API", icon: SiGoogle, color: "#4285F4" },
       ],
-      live: 'https://pragati-enterprises.dev-server.karvatech.com/login?next=%2F',
-      image: '/projects/pragati.png',
+      github:
+        "https://github.com/Viveknathtiwari01/Personalized-health-website",
+      live: "https://wellnex.vercel.app/",
+      image: "/projects/FitFussion.png",
     },
     {
-      title: 'WhatsApp Chat Analyzer',
-      description: 'Machine learning-based chat analysis tool for WhatsApp conversations. Analyzes the chat data and provides insights about the user with sentiment analysis, word frequency, and more.',
+      title: "HireMind - AI Powered Career Coach",
+      description:
+        "An AI-powered career coach that helps you to find jobs insights, market trends, mock interview preparation, resume builder, and cover letter builder.",
       techStack: [
-        { name: 'Python', icon: SiPython, color: '#3776AB' },
-        { name: 'TensorFlow', icon: SiTensorflow, color: '#FF6F00' },
-        { name: 'Scikit-learn', icon: SiScikitlearn, color: '#F7931E' },
-        { name: 'Streamlit', icon: SiStreamlit, color: '#FF6F00' },
+        { name: "React Js", icon: SiReact, color: "#61DAFB" },
+        { name: "Next js", icon: SiNextdotjs, color: "#61DAFB" },
+        { name: "Gemini API", icon: SiGoogle, color: "#4285F4" },
+        { name: "Tailwind CSS", icon: SiTailwindcss, color: "#38BDF8" },
+        { name: "NeonDB", icon: SiPostgresql, color: "#336791" },
+        { name: "Clerk", icon: SiClerk, color: "#E34F26" },
       ],
-      github: 'https://github.com/Viveknathtiwari01/WhatsApp-Chat-Analysis',
-      image: '/projects/whatsapp_chat_analyzer.png',
+      github: "https://github.com/Viveknathtiwari01/AI_MOCK_INTERVIEWER",
+      live: "https://ai-career-coach-55ye.vercel.app/",
+      image: "/projects/hiremind.png",
     },
     {
-      title: 'CHATVERSE',
-      description: 'A chat application with real-time messaging, user authentication, one-to-one chat, group chat, real-time chat with ChatGPT using OpenAI API, real-time image generation using DALL-E API, and a clean UI.',
+      title: "Quotation Generation Sysytem",
+      description:
+        "Dynamic web app for creating customizable quotations with image insertion, product management, and secure user authentication. Features PDF upload and parsing, AI-powered content analysis, and real-time PDF generation. ",
       techStack: [
-        { name: 'Node.js', icon: SiNodedotjs, color: '#339933' },
-        { name: 'Express', icon: SiExpress, color: '#339933' },
-        { name: 'MongoDB', icon: SiMongodb, color: '#47A248' },
-        { name: 'OpenAI', icon: SiOpenai, color: '#10A37F' },
-        { name: 'DALL-E', icon: SiOpenai, color: '#10A37F' },
-        { name: 'React', icon: SiReact, color: '#61DAFB' },
-        { name: 'Tailwind CSS', icon: SiTailwindcss, color: '#38BDF8' },
+        { name: "Python", icon: SiPython, color: "#3776AB" },
+        { name: "Docker", icon: SiDocker, color: "#2496ED" },
+        { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
+        { name: "ReportLab", icon: SiFiles, color: "#FF0000" },
+        { name: "pdf2image", icon: BsFiletypePdf, color: "#FF0000" },
+        { name: "Flask", icon: SiFlask, color: "#FF0000" },
+        { name: "OpenAI API", icon: SiOpenai, color: "#10A37F" },
+
+        { name: "HTML/CSS", icon: SiHtml5, color: "#E34F26" },
       ],
-      github: 'https://github.com/Viveknathtiwari01/CHATVERSE',
-      image: '/projects/chatverse.png',
-    },
-    
-    {
-      title: 'AI Mock Interviewer',
-      description: 'An AI-powered mock interviewer that helps you to prepare for your interviews with personalized suggestions.',
-      techStack: [
-        { name: 'Python', icon: SiPython, color: '#3776AB' },
-        { name: 'Scikit-learn', icon: SiScikitlearn, color: '#F7931E' },
-        { name: 'Next Js', icon: SiNextdotjs, color: '#61DAFB' },
-        { name: 'React', icon: SiReact, color: '#61DAFB' },
-        { name: 'Node.js', icon: SiNodedotjs, color: '#339933' },
-        { name: 'Express', icon: SiExpress, color: '#339933' },
-        { name: 'MongoDB', icon: SiMongodb, color: '#47A248' },
-        { name: 'OpenAI', icon: SiOpenai, color: '#10A37F' },
-      ],
-      github: 'https://github.com/Viveknathtiwari01/AI_MOCK_INTERVIEWER',
-      image: '/projects/ai-interviewer.png',
+      live: "https://pragati-enterprises.dev-server.karvatech.com/login?next=%2F",
+      image: "/projects/pragati.png",
     },
     {
-      title: 'Weather App',
-      description: 'A weather forecast web application using OpenWeatherMap API with real-time weather data and responsive design.',
+      title: "CHATVERSE",
+      description:
+        "A chat application with real-time messaging, user authentication, one-to-one chat, group chat, real-time chat with ChatGPT using OpenAI API, real-time image generation using DALL-E API, and a clean UI.",
       techStack: [
-        { name: 'HTML5', icon: SiHtml5, color: '#E34F26' },
-        { name: 'CSS3', icon: SiCss3, color: '#1572B6' },
-        { name: 'JavaScript', icon: SiJavascript, color: '#F7DF1E' },
+        { name: "Node.js", icon: SiNodedotjs, color: "#339933" },
+        { name: "Express", icon: SiExpress, color: "#339933" },
+        { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
+        { name: "OpenAI", icon: SiOpenai, color: "#10A37F" },
+        { name: "DALL-E", icon: SiOpenai, color: "#10A37F" },
+        { name: "React", icon: SiReact, color: "#61DAFB" },
+        { name: "Tailwind CSS", icon: SiTailwindcss, color: "#38BDF8" },
       ],
-      github: 'https://github.com/Viveknathtiwari01/Weather-app',
-      image: '/projects/weather-app.png',
+      github: "https://github.com/Viveknathtiwari01/CHATVERSE",
+      image: "/projects/chatverse.png",
     },
-  ]
+
+    {
+      title: "AI Mock Interviewer",
+      description:
+        "An AI-powered mock interviewer that helps you to prepare for your interviews with personalized suggestions.",
+      techStack: [
+        { name: "Python", icon: SiPython, color: "#3776AB" },
+        { name: "Scikit-learn", icon: SiScikitlearn, color: "#F7931E" },
+        { name: "Next Js", icon: SiNextdotjs, color: "#61DAFB" },
+        { name: "React", icon: SiReact, color: "#61DAFB" },
+        { name: "Node.js", icon: SiNodedotjs, color: "#339933" },
+        { name: "Express", icon: SiExpress, color: "#339933" },
+        { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
+        { name: "OpenAI", icon: SiOpenai, color: "#10A37F" },
+      ],
+      github: "https://github.com/Viveknathtiwari01/AI_MOCK_INTERVIEWER",
+      image: "/projects/ai-interviewer.png",
+    },
+    {
+      title: "Weather App",
+      description:
+        "A weather forecast web application using OpenWeatherMap API with real-time weather data and responsive design.",
+      techStack: [
+        { name: "HTML5", icon: SiHtml5, color: "#E34F26" },
+        { name: "CSS3", icon: SiCss3, color: "#1572B6" },
+        { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E" },
+      ],
+      github: "https://github.com/Viveknathtiwari01/Weather-app",
+      image: "/projects/weather-app.png",
+    },
+  ];
 
   const container = {
     hidden: { opacity: 0 },
@@ -145,12 +181,12 @@ const Projects = () => {
         staggerChildren: 0.2,
       },
     },
-  }
+  };
 
   const item = {
     hidden: { opacity: 0, y: 20 },
     show: { opacity: 1, y: 0 },
-  }
+  };
 
   return (
     <section id="projects" className="py-20 bg-gray-50 dark:bg-gray-900">
@@ -164,8 +200,8 @@ const Projects = () => {
         >
           <h2 className="heading-primary">Featured Projects</h2>
           <p className="paragraph max-w-3xl mx-auto">
-            Here are some of my notable projects that showcase my skills and experience in different
-            technologies and domains.
+            Here are some of my notable projects that showcase my skills and
+            experience in different technologies and domains.
           </p>
         </motion.div>
 
@@ -236,7 +272,7 @@ const Projects = () => {
         </motion.div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Projects 
+export default Projects;
