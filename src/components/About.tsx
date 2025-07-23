@@ -84,7 +84,7 @@ const About = () => {
                 Hello! I'm a software developer deeply passionate about building intelligent and elegant solutions that merge the power of modern web technologies with machine learning.
               </p>
               <p>
-                My journey in tech began during my university days, where I discovered a keen interest in AI and data-driven applications. Since then, I’ve been dedicated to developing full-stack applications and integrating machine learning models to solve real-world problems—from health & wellness platforms to data analysis tools.
+                My journey in tech began during my university days, where I discovered a keen interest in AI and data-driven applications. Since then, I’ve been dedicated to developing full-stack applications and integrating machine learning models to solve real-world problems.
               </p>
               <p>
                 I specialize in full-stack development and have hands-on experience with machine learning frameworks like Scikit-learn, TensorFlow, and NLP libraries. I enjoy exploring the intersection of AI and user experience to deliver smart, impactful products.
