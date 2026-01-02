@@ -189,19 +189,29 @@ const Projects = () => {
   };
 
   return (
-    <section id="projects" className="py-20 bg-gray-50 dark:bg-gray-900">
-      <div className="section-container">
+    <section id="projects" className="relative py-24 overflow-hidden">
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-white to-secondary/5 dark:from-primary/15 dark:via-gray-950 dark:to-secondary/15" />
+        <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] dark:bg-[radial-gradient(#374151_1px,transparent_1px)] [background-size:16px_16px]" />
+      </div>
+
+      <div className="section-container relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-12"
+          viewport={{ once: true, margin: '-100px' }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-20"
         >
-          <h2 className="heading-primary">Featured Projects</h2>
-          <p className="paragraph max-w-3xl mx-auto">
-            Here are some of my notable projects that showcase my skills and
-            experience in different technologies and domains.
+          <span className="inline-block px-5 py-2.5 bg-gradient-to-r from-primary/10 to-secondary/10 text-primary dark:text-secondary text-sm font-medium rounded-full mb-5 border border-primary/20 dark:border-secondary/20 backdrop-blur-sm">
+            Product stories
+          </span>
+          <h2 className="text-5xl font-bold text-gray-900 dark:text-white mb-5">
+            Featured projects that blend craft & intelligence
+          </h2>
+          <div className="w-24 h-1.5 bg-gradient-to-r from-primary to-secondary mx-auto mb-6 rounded-full" />
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            A snapshot of platforms, AI experiments, and full-stack solutions I’ve shaped end-to-end—from research to release.
           </p>
         </motion.div>
 
@@ -209,35 +219,37 @@ const Projects = () => {
           variants={container}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          viewport={{ once: true, margin: '-100px' }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
         >
           {projects.map((project, index) => (
             <motion.div
               key={index}
               variants={item}
-              className="card group hover:-translate-y-2 transition-all duration-300"
+              className="group relative overflow-hidden rounded-3xl border border-gray-200 dark:border-gray-700 bg-white/80 dark:bg-gray-900/70 backdrop-blur-lg shadow-lg hover:shadow-2xl transition-all duration-300"
             >
-              <div className="relative overflow-hidden rounded-t-lg">
+              <div className="relative overflow-hidden">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-48 object-cover"
+                  className="w-full h-52 object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-primary-500/20 to-secondary-500/20 dark:from-primary-500/10 dark:to-secondary-500/10" />
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-secondary/25" />
               </div>
-              <div className="p-6 space-y-4">
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-primary-500 transition-colors duration-200">
+              <div className="relative p-8 space-y-5">
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white leading-snug group-hover:text-primary transition-colors">
                   {project.title}
                 </h3>
-                <p className="paragraph">{project.description}</p>
-                <div className="flex flex-wrap gap-3">
+                <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                  {project.description}
+                </p>
+                <div className="flex flex-wrap gap-2">
                   {project.techStack.map((tech, i) => (
                     <div
                       key={i}
-                      className="flex items-center gap-1.5 px-3 py-1 rounded-full text-sm"
+                      className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium border border-gray-100 dark:border-gray-700"
                       style={{
-                        backgroundColor: `${tech.color}20`,
+                        backgroundColor: `${tech.color}1A`,
                         color: tech.color,
                       }}
                     >
@@ -246,33 +258,36 @@ const Projects = () => {
                     </div>
                   ))}
                 </div>
-                <div className="flex gap-4 pt-4">
+                <div className="flex items-center gap-4 pt-4">
                   <a
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-600 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 transition-colors duration-200"
+                    className="inline-flex items-center gap-2 text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-secondary transition-colors"
                   >
-                    <FaGithub className="w-6 h-6" />
+                    <FaGithub className="w-5 h-5" />
+                    Code
                   </a>
                   {project.live && (
                     <a
                       href={project.live}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-gray-600 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 transition-colors duration-200"
+                      className="inline-flex items-center gap-2 text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-secondary transition-colors"
                     >
-                      <FaExternalLinkAlt className="w-5 h-5" />
+                      <FaExternalLinkAlt className="w-4 h-4" />
+                      Live
                     </a>
                   )}
                 </div>
               </div>
+              <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-primary to-secondary opacity-0 group-hover:opacity-100 transition-opacity" />
             </motion.div>
           ))}
         </motion.div>
       </div>
     </section>
   );
-};
+}
 
 export default Projects;

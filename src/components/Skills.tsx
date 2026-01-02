@@ -31,6 +31,10 @@ import {
   SiVercel,
   SiClerk,
   SiPrisma,
+  SiJira,
+  SiJenkins,
+  SiWordpress,
+  SiSonarqube,
 } from "react-icons/si";
 import { SiNextdotjs } from "react-icons/si";
 
@@ -88,12 +92,17 @@ const Skills = () => {
       category: "Database",
     },
     { name: "MySQL", icon: SiMysql, color: "#4479A1", category: "Database" },
+    { name: "PostgreSQL", icon: SiPostgresql, color: "#336791", category: "Database" },
     {
       name: "MongoDB Atlas",
       icon: SiMongodb,
       color: "#47A248",
       category: "Database",
     },
+    { name: "Jira", icon: SiJira, color: "#0052CC", category: "Tools" },
+    { name: "Jenkins", icon: SiJenkins, color: "#D24939", category: "DevOps" },
+    { name: "WordPress", icon: SiWordpress, color: "#21759B", category: "CMS" },
+    { name: "SonarQube", icon: SiSonarqube, color: "#4E9BCD", category: "DevOps" },
     { name: "HTML5", icon: FaHtml5, color: "#E34F26", category: "Frontend" },
     { name: "CSS3", icon: FaCss3Alt, color: "#1572B6", category: "Frontend" },
     {
@@ -157,39 +166,66 @@ const Skills = () => {
       },
     },
   };
-
   const item = {
     hidden: { opacity: 0, scale: 0.8 },
     show: { opacity: 1, scale: 1 },
   };
 
+  // Group skills by category
+  const skillsByCategory = skills.reduce((acc, skill) => {
+    if (!acc[skill.category]) {
+      acc[skill.category] = [];
+    }
+    acc[skill.category].push(skill);
+    return acc;
+  }, {} as Record<string, typeof skills>);
+
   return (
-    <section id="skills" className="py-20 bg-gray-50 dark:bg-gray-900">
-      <div className="section-container">
+    <section id="skills" className="relative py-24 overflow-hidden">
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-white to-secondary/5 dark:from-primary/15 dark:via-gray-950 dark:to-secondary/15" />
+        <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] dark:bg-[radial-gradient(#374151_1px,transparent_1px)] [background-size:16px_16px]" />
+      </div>
+
+      <div className="section-container relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-12"
+          viewport={{ once: true, margin: '-100px' }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-20"
         >
-          <h2 className="heading-primary">Technical Skills</h2>
-          <p className="paragraph max-w-3xl mx-auto">
-            I have experience with a wide range of technologies and tools. Here
-            are some of my key technical skills:
+          <span className="inline-block px-5 py-2.5 bg-gradient-to-r from-primary/10 to-secondary/10 text-primary dark:text-secondary text-sm font-medium rounded-full mb-5 border border-primary/20 dark:border-secondary/20 backdrop-blur-sm">
+            Technical toolkit
+          </span>
+          <h2 className="text-5xl font-bold text-gray-900 dark:text-white mb-5">
+            Skills that power product experiences
+          </h2>
+          <div className="w-24 h-1.5 bg-gradient-to-r from-primary to-secondary mx-auto mb-6 rounded-full" />
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            A blend of frontend craft, backend systems, and AI fluency used to build resilient, intelligent platforms.
           </p>
         </motion.div>
 
         <div className="space-y-16">
           {categories.map((category) => (
             <div key={category} className="w-full">
-              <h3 className="heading-secondary text-center mb-8">{category}</h3>
+              <div className="flex items-center gap-3 mb-8">
+                <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-primary/10 to-secondary/10 text-primary dark:text-secondary font-semibold text-sm">
+                  {category.substring(0, 2)}
+                </span>
+                <h3 className="text-2xl font-semibold text-gray-900 dark:text-white">
+                  {category}
+                </h3>
+                <div className="flex-1 h-px bg-gradient-to-r from-primary/30 via-gray-200 dark:via-gray-700 to-transparent" />
+              </div>
+
               <motion.div
                 variants={container}
                 initial="hidden"
                 whileInView="show"
-                viewport={{ once: true }}
-                className="flex flex-wrap justify-center gap-6"
+                viewport={{ once: true, margin: '-100px' }}
+                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
               >
                 {skills
                   .filter((skill) => skill.category === category)
@@ -197,24 +233,30 @@ const Skills = () => {
                     <motion.div
                       key={index}
                       variants={item}
-                      whileHover={{ scale: 1.05 }}
-                      className="card p-6 flex flex-col items-center justify-center text-center group hover:shadow-xl transition-all duration-300 w-[200px]"
+                      whileHover={{ y: -4 }}
+                      className="group relative overflow-hidden rounded-2xl border border-gray-200 dark:border-gray-700 bg-white/80 dark:bg-gray-900/70 backdrop-blur-md p-6 shadow-sm hover:shadow-xl transition-all duration-300"
                     >
-                      <div className="relative w-16 h-16 mb-4">
-                        <div
-                          className="absolute inset-0 rounded-full opacity-20"
-                          style={{ backgroundColor: skill.color }}
-                        />
-                        <div className="absolute inset-0 flex items-center justify-center">
-                          <skill.icon
-                            className="w-8 h-8 transition-transform duration-300 group-hover:scale-110"
-                            style={{ color: skill.color }}
+                      <div className="flex items-center gap-4">
+                        <div className="relative h-12 w-12">
+                          <span
+                            className="absolute inset-0 rounded-2xl opacity-20"
+                            style={{ backgroundColor: skill.color }}
                           />
+                          <div className="relative flex h-full w-full items-center justify-center rounded-2xl bg-white dark:bg-gray-900">
+                            <skill.icon
+                              className="w-6 h-6 transition-transform duration-300 group-hover:scale-110"
+                              style={{ color: skill.color }}
+                            />
+                          </div>
+                        </div>
+                        <div>
+                          <h4 className="text-base font-semibold text-gray-900 dark:text-white">{skill.name}</h4>
+                          <p className="text-xs uppercase tracking-[0.25em] text-gray-500 dark:text-gray-400 mt-1">
+                            {category}
+                          </p>
                         </div>
                       </div>
-                      <h4 className="font-medium text-gray-800 dark:text-gray-200">
-                        {skill.name}
-                      </h4>
+                      <div className="absolute inset-x-6 bottom-4 h-px bg-gradient-to-r from-primary/30 via-secondary/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                     </motion.div>
                   ))}
               </motion.div>
@@ -224,6 +266,6 @@ const Skills = () => {
       </div>
     </section>
   );
-};
+}
 
 export default Skills;

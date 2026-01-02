@@ -69,41 +69,69 @@ const EducationModal = ({ isOpen, onClose }: EducationModalProps) => {
             </button>
 
             {/* Header */}
-            <div className="p-6 md:p-8 border-b border-gray-200 dark:border-gray-700 bg-gradient-to-r from-primary-500/10 to-secondary-500/10">
-              <div className="flex items-center space-x-4">
-                <div className="p-3 rounded-full bg-primary-500/10">
-                  <FaGraduationCap className="w-8 h-8 text-primary-500" />
+            <div className="p-6 md:p-8 border-b border-gray-200 dark:border-gray-700 bg-gradient-to-r from-primary/10 via-white to-secondary/10 dark:from-primary/20 dark:via-gray-900 dark:to-secondary/20">
+              <div className="flex items-center justify-between gap-4">
+                <div className="flex items-center gap-4">
+                  <div className="p-3 rounded-2xl bg-white/70 dark:bg-gray-800/70 shadow-inner">
+                    <FaGraduationCap className="w-8 h-8 text-primary" />
+                  </div>
+                  <div>
+                    <p className="text-sm uppercase tracking-[0.3em] text-primary dark:text-secondary">
+                      Learning journey
+                    </p>
+                    <h2 className="text-3xl font-bold text-gray-900 dark:text-white">Academic timeline</h2>
+                  </div>
                 </div>
-                <h2 className="text-3xl font-bold text-gray-900 dark:text-white">Education</h2>
+                <span className="hidden sm:block text-sm text-gray-500 dark:text-gray-400">
+                  Evidence of disciplined problem-solving and lifelong curiosity.
+                </span>
               </div>
             </div>
 
             {/* Content */}
             <div className="overflow-y-auto max-h-[calc(90vh-8rem)]">
-              <div className="p-6 md:p-8 space-y-8">
-                {education.map((edu, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.1 }}
-                    className="group p-6 rounded-xl bg-gray-50 dark:bg-gray-700/50 hover:bg-primary-50 dark:hover:bg-primary-900/10 transition-all duration-300"
-                  >
-                    <h3 className="text-2xl font-semibold text-gray-900 dark:text-white group-hover:text-primary-500 transition-colors duration-200">
-                      {edu.degree}
-                    </h3>
-                    <p className="mt-2 text-lg text-gray-600 dark:text-gray-300">{edu.institution}</p>
-                    <div className="mt-3 flex flex-wrap items-center gap-x-4 text-sm text-gray-500 dark:text-gray-400">
-                      <span className="inline-flex items-center">
-                        <span className="w-2 h-2 rounded-full bg-primary-500 mr-2"></span>
-                        {edu.location}
+              <div className="relative p-6 md:p-8">
+                <div className="absolute left-6 top-0 bottom-0 w-px bg-gradient-to-b from-primary/40 via-gray-200 dark:via-gray-700 to-secondary/40" />
+                <div className="space-y-10">
+                  {education.map((edu, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, y: 24 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: index * 0.08 }}
+                      className="relative pl-14"
+                    >
+                      <span className="absolute left-2 top-2 inline-flex h-8 w-8 items-center justify-center rounded-full bg-white dark:bg-gray-800 border border-primary/30 text-sm font-semibold text-primary dark:text-secondary">
+                        {education.length - index}
                       </span>
-                      <span>•</span>
-                      <span>{edu.period}</span>
-                    </div>
-                    <p className="mt-3 text-primary-500 font-medium text-lg">{edu.grade}</p>
-                  </motion.div>
-                ))}
+                      <div className="group rounded-2xl border border-gray-200 dark:border-gray-700 bg-white/80 dark:bg-gray-900/70 backdrop-blur-md p-6 shadow-sm hover:shadow-xl transition-all duration-300">
+                        <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
+                          <div>
+                            <h3 className="text-xl font-semibold text-gray-900 dark:text-white group-hover:text-primary transition-colors">
+                              {edu.degree}
+                            </h3>
+                            <p className="mt-2 text-base text-gray-600 dark:text-gray-300">
+                              {edu.institution}
+                            </p>
+                          </div>
+                          <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.25em] text-primary dark:text-secondary bg-primary/10 dark:bg-secondary/10 px-3 py-1 rounded-full">
+                            {edu.period}
+                          </div>
+                        </div>
+                        <div className="mt-4 flex flex-wrap items-center gap-4 text-sm text-gray-500 dark:text-gray-400">
+                          <span className="inline-flex items-center gap-2">
+                            <span className="inline-flex h-2 w-2 rounded-full bg-primary/70" />
+                            {edu.location}
+                          </span>
+                          <span className="inline-flex items-center gap-2 text-primary dark:text-secondary font-medium">
+                            <span className="inline-flex h-2 w-2 rounded-full bg-secondary/70" />
+                            {edu.grade}
+                          </span>
+                        </div>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
               </div>
             </div>
           </motion.div>
@@ -113,4 +141,4 @@ const EducationModal = ({ isOpen, onClose }: EducationModalProps) => {
   )
 }
 
-export default EducationModal 
+export default EducationModal
