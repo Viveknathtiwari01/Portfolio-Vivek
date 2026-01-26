@@ -35,6 +35,34 @@ const Hero = () => {
               Associate Software Analyst · SmartData Enterprisez
             </div>
 
+            <div className="w-full max-w-2xl rounded-3xl border border-amber-200/70 bg-gradient-to-br from-amber-50/95 via-white/80 to-secondary/10 dark:from-amber-400/10 dark:via-gray-900/65 dark:to-secondary/10 backdrop-blur-md p-6 shadow-xl">
+              <div className="flex flex-col sm:flex-row sm:items-center gap-5">
+                <div className="relative h-36 w-36 sm:h-44 sm:w-44 overflow-hidden rounded-3xl border border-amber-200/70 dark:border-amber-400/20 bg-white/90 dark:bg-gray-900/60 shadow-md">
+                  <Image
+                    src="/medal.jpeg"
+                    alt="Gold medal achievement"
+                    fill
+                    className="object-contain p-1"
+                    sizes="(max-width: 640px) 144px, 176px"
+                    quality={100}
+                    priority
+                  />
+                </div>
+
+                <div className="flex flex-col gap-2">
+                  <p className="text-xs font-semibold uppercase tracking-[0.28em] text-amber-700 dark:text-amber-200">
+                    Achievement
+                  </p>
+                  <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white leading-tight">
+                    Gold Medalist · MCA Batch 2023-25
+                  </h2>
+                  <p className="text-sm sm:text-base text-gray-700 dark:text-gray-300 leading-relaxed">
+                    Awarded for outstanding academic performance and securing the top rank at my college.
+                  </p>
+                </div>
+              </div>
+            </div>
+
             <div className="space-y-6">
               <h1 className="text-4xl sm:text-5xl xl:text-6xl font-bold text-gray-900 dark:text-white leading-tight">
                 Designing AI-native product journeys with crafted engineering.

@@ -13,7 +13,7 @@ const Footer = () => {
       icon: FaGithub,
       href: 'https://github.com/Viveknathtiwari01',
       wrapperClass:
-        'bg-gray-900 text-white border-gray-900/40 hover:bg-gray-800 hover:shadow-[0_12px_30px_-12px_rgba(15,23,42,0.65)]',
+        'bg-black text-white border-gray-900/40 hover:bg-gray-800 hover:shadow-[0_12px_30px_-12px_rgba(15,23,42,0.65)]',
     },
     {
       name: 'LinkedIn',
@@ -70,7 +70,7 @@ const Footer = () => {
               </h3>
             </div>
 
-            <div className="flex flex-col items-start gap-4">
+            <div className="flex flex-col items-start gap-6">
               <p className="text-sm text-gray-600 dark:text-gray-300">
                 Connect with me
               </p>
@@ -93,7 +93,7 @@ const Footer = () => {
 
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 border-t border-gray-200 dark:border-gray-700 pt-6">
             <p className="text-sm text-gray-600 dark:text-gray-400">
-              {currentYear} Vivek Nath Tiwari. Crafted with Next.js, Tailwind, and a love for clean design.
+              &copy; 2024-{currentYear} Vivek Nath Tiwari. All rights reserved.
             </p>
             <button
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
