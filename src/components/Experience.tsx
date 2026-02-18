@@ -1,256 +1,201 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
-import { FaBriefcase, FaCalendarAlt, FaMapMarkerAlt } from "react-icons/fa";
+import { FaBriefcase, FaMapMarkerAlt } from "react-icons/fa";
 
 const Experience = () => {
-  // Function to calculate months between two dates
   const calculateMonthsBetween = (startDate: Date, endDate: Date): number => {
-    const startYear = startDate.getFullYear();
-    const startMonth = startDate.getMonth();
-    const endYear = endDate.getFullYear();
-    const endMonth = endDate.getMonth();
-    
-    return (endYear - startYear) * 12 + (endMonth - startMonth) + 1; // +1 to include current month
+    return (endDate.getFullYear() - startDate.getFullYear()) * 12 +
+      (endDate.getMonth() - startDate.getMonth()) + 1;
   };
 
-  // Function to format date string to include total months
-  const formatExperiencePeriod = (period: string, startDateStr?: string): string => {
-    if (period.includes('Present')) {
-      // For current job, use the existing monthsAtCurrentJob
-      const startDate = startDateStr ? new Date(startDateStr) : new Date(2025, 9, 6);
-      const months = calculateMonthsBetween(startDate, new Date());
-      return `${period} • ${months} month${months !== 1 ? 's' : ''}`;
-    }
-    
-    // For past jobs, parse the period to calculate months
-    const [start, end] = period.split(' - ');
-    if (start && end) {
-      const startDate = parseDateString(start);
-      const endDate = end === 'Present' ? new Date() : parseDateString(end);
-      
-      if (startDate && endDate) {
-        const months = calculateMonthsBetween(startDate, endDate);
-        return `${period} • ${months} month${months !== 1 ? 's' : ''}`;
-      }
-    }
-    
-    return period;
-  };
-
-  // Helper function to parse date strings like 'Oct 2025'
   const parseDateString = (dateStr: string): Date | null => {
-    const months: { [key: string]: number } = {
-      'Jan': 0, 'Feb': 1, 'Mar': 2, 'Apr': 3, 'May': 4, 'Jun': 5,
-      'Jul': 6, 'Aug': 7, 'Sep': 8, 'Oct': 9, 'Nov': 10, 'Dec': 11
+    const months: Record<string, number> = {
+      Jan: 0, Feb: 1, Mar: 2, Apr: 3, May: 4, Jun: 5,
+      Jul: 6, Aug: 7, Sep: 8, Oct: 9, Nov: 10, Dec: 11,
     };
-    
-    const parts = dateStr.split(' ');
-    if (parts.length === 2) {
-      const month = months[parts[0]];
-      const year = parseInt(parts[1]);
-      if (!isNaN(month) && !isNaN(year)) {
-        return new Date(year, month, 1);
-      }
+    const [month, year] = dateStr.split(" ");
+    if (months[month] !== undefined && !isNaN(Number(year))) {
+      return new Date(Number(year), months[month], 1);
     }
     return null;
+  };
+
+  const formatDuration = (period: string, startDateStr?: string): string => {
+    if (period.includes("Present") && startDateStr) {
+      const months = calculateMonthsBetween(new Date(startDateStr), new Date());
+      return `${months} mo${months !== 1 ? "s" : ""}`;
+    }
+    const [start, end] = period.split(" - ");
+    if (start && end) {
+      const s = parseDateString(start);
+      const e = end === "Present" ? new Date() : parseDateString(end);
+      if (s && e) {
+        const months = calculateMonthsBetween(s, e);
+        return `${months} mo${months !== 1 ? "s" : ""}`;
+      }
+    }
+    return "";
   };
 
   const experiences = [
     {
       title: "Associate Software Analyst",
-      company: "SmartData Enterprisez",
-      location: "Mohali, Punjab, India",
+      company: "smartData Enterprises Inc",
+      location: "Mohali, Punjab",
       period: "Oct 2025 - Present",
       startDate: "2025-10-06",
-      icon: <FaBriefcase className="text-primary text-xl" />,
       description: [
-        "Developing and maintaining enterprise-level applications using MERN stack with a focus on scalable and efficient solutions.",
-        "Implementing AI/ML models into production applications to enhance user experience and business intelligence.",
-        "Collaborating with cross-functional teams to design and deploy robust backend services and APIs.",
-        "Optimizing application performance and ensuring code quality through code reviews and best practices.",
-        "Working with modern DevOps tools and practices including CI/CD pipelines and containerization."
+        "Developing enterprise-level apps using MERN stack with scalable, efficient architecture.",
+        "Implementing AI/ML models into production to enhance UX and business intelligence.",
+        "Collaborating with cross-functional teams on robust backend services and REST APIs.",
+        "Optimizing performance and enforcing quality through code reviews and best practices.",
+        "Working with CI/CD pipelines, containerization, and modern DevOps tooling.",
       ],
-      skills: ["MERN Stack", "AI/ML Integration", "REST APIs", "Microservices", "Docker", "AWS"]
+      skills: ["MERN Stack", "AI/ML", "REST APIs", "Microservices", "Docker", "AWS"],
     },
     {
-      title: "AI/ML Trainee (Full Stack Development)",
-      company: "SmartData Enterprises in collaboration with KarvaTech Solutions",
-      location: "Lucknow, India",
+      title: "AI/ML Trainee (Full Stack)",
+      company: "SmartData + KarvaTech Solutions",
+      location: "Lucknow",
       period: "Feb 2025 - Jun 2025",
       startDate: "2025-02-01",
-      endDate: "2025-06-30",
-      icon: <FaBriefcase className="text-primary text-xl" />,
       description: [
-        "Completed a 5-month intensive training program focused on Full Stack Web Development with integrated AI & Machine Learning techniques.",
-        "Gained hands-on experience in building web applications using Python, Streamlit, Flask, and integrating machine learning models.",
-        "Applied key machine learning concepts using Python, TensorFlow, Scikit-learn, and NLP libraries to build predictive and text-based AI solutions.",
-        "Developed dynamic and responsive web applications using modern tech stacks including Streamlit, Flask, and REST APIs.",
+        "Completed a 5-month intensive program blending full-stack web dev with AI/ML techniques.",
+        "Built web applications using Python, Streamlit, Flask, and integrated ML models.",
+        "Applied TensorFlow, Scikit-learn, and NLP libraries for predictive and text-based AI solutions.",
       ],
-      skills: ["Python", "Machine Learning", "Streamlit", "Flask", "TensorFlow", "NLP"]
+      skills: ["Python", "ML", "Streamlit", "Flask", "TensorFlow", "NLP"],
     },
     {
       title: "Full Stack Developer Intern",
       company: "KarvaTech Solutions",
-      location: "Lucknow, India",
+      location: "Lucknow",
       period: "Sep 2024 - Mar 2025",
       startDate: "2024-09-01",
-      endDate: "2025-03-31",
-      icon: <FaBriefcase className="text-primary text-xl" />,
       description: [
-        "Developed a responsive product catalog website for Coromass Crop Care Industries using modern frontend frameworks.",
-        "Built a custom CRM system for LBSIMDS to optimize lead management and automate workflows.",
-        "Worked across the full development lifecycle—from UI design to backend integration—ensuring scalable solutions.",
+        "Built a responsive product catalog for Coromass Crop Care Industries.",
+        "Developed a custom CRM for LBSIMDS to optimize lead management and automate workflows.",
+        "Worked across the full lifecycle — from UI design to backend integration.",
       ],
-      skills: ["React", "Node.js", "MongoDB", "Express", "REST APIs"]
+      skills: ["React", "Node.js", "MongoDB", "Express", "REST APIs"],
     },
     {
       title: "Web Developer Intern",
-      company: "SoftPro India Computer Technology",
-      location: "Lucknow, India",
+      company: "SoftPro India",
+      location: "Lucknow",
       period: "Feb 2024 - May 2024",
       startDate: "2024-02-01",
-      endDate: "2024-05-31",
-      icon: <FaBriefcase className="text-primary text-xl" />,
       description: [
-        "Developed responsive and mobile-friendly web applications using modern web technologies.",
-        "Gained practical experience in full-stack development and implemented new technologies in real projects.",
+        "Developed responsive, mobile-friendly web applications with modern technologies.",
+        "Gained practical full-stack experience and problem-solving skills on real projects.",
       ],
-      skills: ["HTML5", "CSS3", "JavaScript", "Bootstrap"]
+      skills: ["HTML5", "CSS3", "JavaScript", "Bootstrap"],
     },
   ];
 
   return (
-    <section id="experience" className="relative pt-24 pb-16 overflow-hidden">
-      {/* Background elements */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-white to-secondary/5 dark:from-primary/10 dark:via-gray-900 dark:to-secondary/10"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] dark:bg-[radial-gradient(#374151_1px,transparent_1px)] [background-size:16px_16px]"></div>
-      </div>
+    <section id="experience" className="section-experience section-accent relative py-20 overflow-hidden">
 
-      <div className="section-container relative">
-        <div className="text-center mb-20">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6 }}
-          >
-            <span className="inline-block px-5 py-2.5 bg-gradient-to-r from-primary/10 to-secondary/10 text-primary dark:text-secondary text-sm font-medium rounded-full mb-5 border border-primary/20 dark:border-secondary/20 backdrop-blur-sm">
-              Professional Timeline
-            </span>
-            <h2 className="text-5xl font-bold text-gray-900 dark:text-white mb-5">
-              Career Journey
-            </h2>
-            <div className="w-24 h-1.5 bg-gradient-to-r from-primary to-secondary mx-auto mb-6 rounded-full"></div>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              Exploring my professional evolution through key roles and achievements
-            </p>
-          </motion.div>
-        </div>
+      <div className="section-container relative z-10">
+        {/* Section header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-16"
+        >
+          <span className="section-badge">Experience</span>
+          <h2 className="section-title">Career Journey</h2>
+          <div className="section-divider" />
+          <p className="section-subtitle">
+            Key roles and achievements across my professional timeline.
+          </p>
+        </motion.div>
 
-        <div className="relative max-w-7xl mx-auto">
-          {/* Decorative elements */}
-          <div className="absolute -top-20 -left-20 w-64 h-64 bg-primary/5 rounded-full mix-blend-multiply filter blur-3xl opacity-70 dark:opacity-30 animate-blob"></div>
-          <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-secondary/5 rounded-full mix-blend-multiply filter blur-3xl opacity-70 dark:opacity-30 animate-blob animation-delay-2000"></div>
-          
-          <div className="relative space-y-16 md:space-y-24">
-            {experiences.map((exp, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className={`relative group ${index % 2 === 0 ? 'md:pl-16' : 'md:pr-16'}`}
-              >
-                {/* Year badge */}
-                <div className={`absolute hidden md:flex items-center justify-center w-64 h-12 rounded-full bg-white dark:bg-gray-800 shadow-lg z-10 ${
-                  index % 2 === 0 ? 'md:-left-20' : 'md:-right-20'
-                }`}>
-                  <span className="text-sm font-medium text-gray-700 dark:text-gray-200 whitespace-nowrap">
-                    {formatExperiencePeriod(exp.period, exp.startDate)}
+        {/* Timeline */}
+        <div className="relative max-w-4xl mx-auto">
+          {/* Vertical line */}
+          <div className="absolute left-4 sm:left-6 top-0 bottom-0 w-px bg-gradient-to-b from-primary-500/40 via-gray-200 dark:via-gray-700 to-secondary-500/40" />
+
+          <div className="space-y-10">
+            {experiences.map((exp, index) => {
+              const duration = formatDuration(exp.period, exp.startDate);
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-80px" }}
+                  transition={{ duration: 0.4, delay: index * 0.08 }}
+                  className="relative pl-12 sm:pl-16"
+                >
+                  {/* Timeline dot */}
+                  <span className="absolute left-1.5 sm:left-3.5 top-2 inline-flex h-6 w-6 items-center justify-center rounded-full bg-white dark:bg-gray-900 border-2 border-primary-500 dark:border-secondary-500 shadow-sm">
+                    <FaBriefcase className="w-2.5 h-2.5 text-primary-600 dark:text-secondary-400" />
                   </span>
-                </div>
 
-                {/* Content Card */}
-                <div className={`relative bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-xl transition-all duration-500 hover:shadow-2xl hover:-translate-y-1.5 border border-gray-100 dark:border-gray-700 max-w-4xl mx-auto ${
-                  index % 2 === 0 ? 'md:ml-32' : 'md:mr-32'
-                }`}>
-                  {/* Gradient accent */}
-                  <div className="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-primary to-secondary"></div>
-                  
-                  <div className="p-6 md:p-7">
-                    <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
+                  {/* Card */}
+                  <div className="glass-card p-5 sm:p-6">
+                    <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-primary-500 to-secondary-500 rounded-l-2xl" />
+
+                    <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-4">
                       <div>
-                        <h3 className="text-xl font-bold text-gray-900 dark:text-white">
+                        <h3 className="font-jakarta text-base sm:text-lg font-bold text-gray-900 dark:text-white">
                           {exp.title}
                         </h3>
-                        <div className="flex items-center mt-1">
-                          <span className="text-lg font-medium text-primary dark:text-secondary">
+                        <div className="flex flex-wrap items-center gap-x-2 gap-y-1 mt-1 text-sm">
+                          <span className="font-medium text-primary-600 dark:text-secondary-400">
                             {exp.company}
                           </span>
-                          <span className="mx-3 text-gray-300 dark:text-gray-600">•</span>
-                          <span className="flex items-center text-gray-500 dark:text-gray-400">
-                            <FaMapMarkerAlt className="mr-1.5 text-sm" />
+                          <span className="text-gray-300 dark:text-gray-600">•</span>
+                          <span className="flex items-center text-xs text-gray-600 dark:text-gray-400">
+                            <FaMapMarkerAlt className="mr-1 text-[10px]" />
                             {exp.location}
                           </span>
                         </div>
                       </div>
-                      <div className="md:hidden bg-gradient-to-r from-primary/10 to-secondary/10 text-primary dark:text-secondary text-xs px-4 py-1.5 rounded-full">
-                        {formatExperiencePeriod(exp.period, exp.startDate)}
+
+                      <div className="flex items-center gap-2">
+                        <span className="px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.15em] text-primary-600 dark:text-secondary-400 bg-primary-500/10 dark:bg-secondary-500/10 rounded-full whitespace-nowrap">
+                          {exp.period}
+                        </span>
+                        {duration && (
+                          <span className="px-2 py-1 text-[10px] font-medium text-gray-600 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 rounded-full whitespace-nowrap">
+                            {duration}
+                          </span>
+                        )}
                       </div>
                     </div>
-                    
-                    <div className="space-y-4">
+
+                    <div className="space-y-2">
                       {exp.description.map((item, i) => (
-                        <div key={i} className="flex group">
-                          <div className="flex-shrink-0 w-1.5 h-1.5 mt-2.5 rounded-full bg-primary/80 dark:bg-secondary/80 mr-3 group-hover:scale-150 transition-transform"></div>
-                          <p className="text-gray-600 dark:text-gray-300">
-                            {item}
-                          </p>
+                        <div key={i} className="flex items-start gap-2">
+                          <span className="mt-2 h-1.5 w-1.5 rounded-full bg-primary-500/60 dark:bg-secondary-500/60 flex-shrink-0" />
+                          <p className="text-sm text-gray-600 dark:text-gray-300">{item}</p>
                         </div>
                       ))}
                     </div>
-                    
-                    {exp.skills && (
-                      <div className="mt-8 pt-6 border-t border-gray-100 dark:border-gray-700">
-                        <div className="flex flex-wrap gap-2">
-                          {exp.skills.map((skill, i) => (
-                            <span 
-                              key={i} 
-                              className="px-3 py-1.5 text-xs font-medium bg-gradient-to-r from-primary/5 to-secondary/5 text-gray-700 dark:text-gray-200 rounded-full border border-gray-100 dark:border-gray-600/50 backdrop-blur-sm hover:from-primary/10 hover:to-secondary/10 transition-colors"
-                            >
-                              {skill}
-                            </span>
-                          ))}
-                        </div>
+
+                    <div className="mt-5 pt-4 border-t border-gray-100 dark:border-gray-700">
+                      <div className="flex flex-wrap gap-1.5">
+                        {exp.skills.map((skill, i) => (
+                          <span
+                            key={i}
+                            className="px-2.5 py-1 text-[10px] font-semibold bg-indigo-50 dark:bg-indigo-500/10 text-indigo-700 dark:text-indigo-300 rounded-full border border-indigo-100 dark:border-indigo-500/20"
+                          >
+                            {skill}
+                          </span>
+                        ))}
                       </div>
-                    )}
+                    </div>
                   </div>
-                  
-                  {/* Decorative corner */}
-                  <div className="absolute bottom-0 right-0 w-24 h-24 bg-gradient-to-tl from-primary/5 to-transparent rounded-tl-2xl opacity-50"></div>
-                </div>
-                
-                {/* Connector line */}
-                <div className={`absolute hidden md:block top-1/2 w-16 h-0.5 bg-gradient-to-r ${
-                  index % 2 === 0 ? 'left-0 from-gray-300 to-primary/30' : 'right-0 from-secondary/30 to-gray-300'
-                }`}></div>
-              </motion.div>
-            ))}
+                </motion.div>
+              );
+            })}
           </div>
-          
-          {/* Animated elements */}
-          <div className="absolute -top-10 right-1/4 w-3 h-3 rounded-full bg-primary/80 dark:bg-secondary/80 animate-pulse"></div>
-          <div className="absolute -bottom-10 left-1/4 w-4 h-4 rounded-full bg-secondary/60 dark:bg-primary/60 animate-pulse animation-delay-1000"></div>
         </div>
-        
-        {/* Floating elements */}
-        <div className="absolute -top-10 left-10 w-8 h-8 rounded-full bg-primary/20 dark:bg-primary/10 animate-float"></div>
-        <div className="absolute top-1/3 right-20 w-6 h-6 rounded-full bg-secondary/20 dark:bg-secondary/10 animate-float animation-delay-2000"></div>
-        <div className="absolute bottom-20 left-1/4 w-5 h-5 rounded-full bg-primary/20 dark:bg-primary/10 animate-float animation-delay-3000"></div>
       </div>
     </section>
   );

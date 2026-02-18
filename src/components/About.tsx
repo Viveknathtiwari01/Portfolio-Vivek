@@ -6,56 +6,46 @@ import Image from 'next/image'
 import { FaGraduationCap, FaLaptopCode, FaRocket } from 'react-icons/fa'
 import { FiCpu, FiTarget, FiUsers } from 'react-icons/fi'
 import EducationModal from './EducationModal'
+import GoalsModal from './GoalsModal'
 
 const About = () => {
   const [isEducationModalOpen, setIsEducationModalOpen] = useState(false)
+  const [isGoalsModalOpen, setIsGoalsModalOpen] = useState(false)
 
   const stats = [
-    {
-      value: '1.5+',
-      label: 'Years crafting modern web apps & product experiences',
-    },
-    {
-      value: '6+',
-      label: 'AI/ML prototypes shipped to production readiness',
-    },
-    {
-      value: '10+',
-      label: 'Cross-functional teams partnered',
-    },
+    { value: '1.5+', label: 'Years building web & AI products' },
+    { value: '6+', label: 'AI/ML prototypes shipped' },
+    { value: '10+', label: 'Cross-functional teams' },
   ]
 
   const focusAreas = [
     {
       icon: FaLaptopCode,
-      title: 'Full-stack craftsmanship',
-      description:
-        'Designing modular, production-ready experiences with Next.js, TypeScript, and the MERN stack.',
+      title: 'Full-stack engineering',
+      description: 'Modular, production-ready apps with Next.js, TypeScript, and the MERN stack.',
       points: [
-        'Microservice-ready architecture & scalable APIs',
-        'Component libraries that match brand systems',
-        'Performance budgets & accessibility baked-in',
+        'Scalable APIs & microservice architecture',
+        'Component libraries aligned to brand systems',
+        'Performance budgets & accessibility baked in',
       ],
     },
     {
       icon: FiCpu,
       title: 'AI-first product thinking',
-      description:
-        'Bringing intelligence to interfaces by blending ML models with usable product flows.',
+      description: 'Bringing intelligence to interfaces with ML models and usable product flows.',
       points: [
         'MLOps-friendly experimentation pipelines',
-        'Natural language UX powered by LLMs & NLP',
+        'NLP-powered UX with LLMs',
         'Data storytelling for actionable insights',
       ],
     },
     {
       icon: FiUsers,
       title: 'Human-centered collaboration',
-      description:
-        'Partnering with stakeholders to translate ideas into delightful and measurable outcomes.',
+      description: 'Translating ideas into delightful, measurable outcomes with stakeholders.',
       points: [
-        'Tight feedback loops with product & design teams',
-        'Mentoring teammates on modern tooling & DevOps',
+        'Tight feedback loops with product & design',
+        'Mentoring on modern tooling & DevOps',
         'Transparent communication across time zones',
       ],
     },
@@ -64,126 +54,128 @@ const About = () => {
   const highlightCards = [
     {
       icon: FaGraduationCap,
-      title: 'Education Timeline',
-      description:
-        'Explore my academic path and the certifications that shaped my engineering mindset.',
+      title: 'Education',
+      description: 'Academic journey and certifications that shaped my engineering mindset.',
       onClick: () => setIsEducationModalOpen(true),
+      cta: 'View timeline',
     },
     {
       icon: FaLaptopCode,
-      title: 'Signature Projects',
-      description:
-        'From AI wellness platforms to data-rich dashboards—discover the products I have launched.',
+      title: 'Projects',
+      description: 'From AI wellness platforms to data-rich dashboards — products I\'ve launched.',
       href: '#projects',
+      cta: 'Explore projects',
     },
     {
       icon: FaRocket,
-      title: 'Future Goals',
-      description:
-        'Leading product squads that merge AI, automation, and design systems for global scale.',
+      title: 'Goals',
+      description: 'Leading product squads that merge AI, automation, and design systems at scale.',
+      onClick: () => setIsGoalsModalOpen(true),
+      cta: 'Next chapter',
     },
   ]
 
   return (
-    <section id="about" className="relative py-24 overflow-hidden">
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-white to-secondary/5 dark:from-primary/10 dark:via-gray-900 dark:to-secondary/10" />
-        <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] dark:bg-[radial-gradient(#374151_1px,transparent_1px)] [background-size:16px_16px]" />
-      </div>
+    <section id="about" className="section-about section-accent relative py-20 overflow-hidden">
 
       <div className="section-container relative z-10">
+        {/* Section header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-100px' }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-20"
+          transition={{ duration: 0.5 }}
+          className="text-center mb-16"
         >
-          <span className="inline-block px-5 py-2.5 bg-gradient-to-r from-primary/10 to-secondary/10 text-primary dark:text-secondary text-sm font-medium rounded-full mb-5 border border-primary/20 dark:border-secondary/20 backdrop-blur-sm">
-            Get to know me
-          </span>
-          <h2 className="text-5xl font-bold text-gray-900 dark:text-white mb-5">
-            Crafting intelligent digital journeys
-          </h2>
-          <div className="w-24 h-1.5 bg-gradient-to-r from-primary to-secondary mx-auto mb-6 rounded-full" />
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            I build immersive product experiences that balance clean engineering with AI-driven intelligence—turning ambitious ideas into scalable, human-centered solutions.
+          <span className="section-badge">About me</span>
+          <h2 className="section-title">Crafting intelligent digital journeys</h2>
+          <div className="section-divider" />
+          <p className="section-subtitle">
+            I build immersive product experiences that balance clean engineering with AI-driven intelligence.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 items-start">
+          {/* Left column — bio + cards */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
+            initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-100px' }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="lg:col-span-3 space-y-10"
+            transition={{ duration: 0.5 }}
+            className="lg:col-span-3 space-y-8"
           >
-            <div className="relative overflow-hidden rounded-3xl border border-gray-200 dark:border-gray-700 bg-white/80 dark:bg-gray-900/70 backdrop-blur-lg shadow-xl">
-              <div className="absolute -top-24 -right-24 w-64 h-64 bg-secondary/10 rounded-full blur-3xl animate-blob" />
-              <div className="absolute -bottom-32 -left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-blob animation-delay-2000" />
+            {/* Bio card */}
+            <div className="glass-card p-7 sm:p-8">
+              <div className="absolute -top-16 -right-16 w-48 h-48 bg-transparent dark:bg-secondary-500/15 rounded-full blur-3xl animate-blob" />
+              <div className="absolute -bottom-24 -left-8 w-56 h-56 bg-transparent dark:bg-primary-500/15 rounded-full blur-3xl animate-blob animation-delay-2000" />
 
-              <div className="relative p-8 md:p-10">
-                <div className="flex flex-wrap items-center gap-3 mb-6">
-                  <span className="px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-primary dark:text-secondary bg-primary/10 dark:bg-secondary/10 rounded-full">
-                    MERN • AI/ML • DevOps
+              <div className="relative">
+                <div className="flex flex-wrap items-center gap-2 mb-5">
+                  <span className="px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-primary-600 dark:text-secondary-400 bg-primary-500/10 dark:bg-secondary-500/10 rounded-full">
+                    MERN · AI/ML · DevOps
                   </span>
-                  <span className="px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 rounded-full">
+                  <span className="px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-600 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 rounded-full">
                     Product-minded engineer
                   </span>
                 </div>
 
-                <div className="space-y-5 text-gray-700 dark:text-gray-300 leading-relaxed">
+                <div className="space-y-4 text-sm sm:text-base text-gray-600 dark:text-gray-300 leading-relaxed">
                   <p>
-                    I’m an Associate Software Analyst at SmartData Enterprisez, shaping intelligent platforms that fuse MERN-stack craftsmanship with AI-driven experiences.
+                    I'm a Software Analyst at smartData Enterprises Inc, shaping intelligent platforms that fuse MERN-stack craftsmanship with AI-driven experiences.
                   </p>
                   <p>
-                    My playbook blends rigorous engineering with rapid experimentation—automating workflows, integrating MLOps pipelines, and launching usable features that make data approachable.
+                    My playbook blends rigorous engineering with rapid experimentation — automating workflows, integrating MLOps pipelines, and launching features that make data approachable.
                   </p>
                   <p>
-                    From enterprise dashboards to AI wellness products, I translate requirements into resilient architectures, purposeful interfaces, and measurable impact.
+                    From enterprise dashboards to AI wellness products, I translate requirements into resilient architectures and measurable impact.
                   </p>
                 </div>
 
-                <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-6">
-                  {stats.map((stat, index) => (
-                    <div
-                      key={index}
-                      className="rounded-2xl border border-gray-200 dark:border-gray-700 bg-white/80 dark:bg-gray-900/60 backdrop-blur-md p-5 shadow-sm"
+                {/* Stats */}
+                <div className="mt-8 grid grid-cols-3 gap-4">
+                  {stats.map((stat, i) => (
+                    <motion.div
+                      key={i}
+                      initial={{ opacity: 0, y: 10 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.3, delay: i * 0.1 }}
+                      whileHover={{ scale: 1.05, y: -2 }}
+                      className="group relative rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900/60 backdrop-blur-md p-4 overflow-hidden cursor-default transition-shadow duration-300 hover:shadow-lg hover:shadow-indigo-500/10"
                     >
-                      <p className="text-3xl font-bold text-primary dark:text-secondary">{stat.value}</p>
-                      <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">{stat.label}</p>
-                    </div>
+                      <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-indigo-500 to-violet-500 opacity-60 group-hover:opacity-100 transition-opacity" />
+                      <p className="text-2xl font-extrabold bg-gradient-to-br from-indigo-600 to-violet-600 bg-clip-text text-transparent dark:from-indigo-400 dark:to-violet-400">{stat.value}</p>
+                      <p className="mt-1.5 text-[11px] font-medium text-gray-600 dark:text-gray-400 leading-snug">{stat.label}</p>
+                    </motion.div>
                   ))}
                 </div>
               </div>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            {/* Focus areas */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
               {focusAreas.map((area, index) => (
                 <motion.div
                   key={area.title}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: '-100px' }}
-                  transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
-                  className={`group relative rounded-2xl border border-gray-200 dark:border-gray-700 bg-white/80 dark:bg-gray-900/70 backdrop-blur-lg p-6 shadow-md hover:shadow-xl transition-all duration-300 ${
-                    index === 2 ? 'lg:col-span-2' : ''
-                  }`}
+                  viewport={{ once: true, margin: '-80px' }}
+                  transition={{ duration: 0.4, delay: 0.1 + index * 0.08 }}
+                  className={`glass-card p-5 ${index === 2 ? 'lg:col-span-2' : ''}`}
                 >
-                  <div className="flex items-start gap-4">
-                    <div className="relative h-12 w-12 flex items-center justify-center rounded-xl bg-gradient-to-br from-primary/10 to-secondary/10 text-primary dark:text-secondary">
-                      <area.icon className="w-6 h-6" />
+                  <div className="flex items-start gap-3">
+                    <div className="h-10 w-10 flex-shrink-0 flex items-center justify-center rounded-xl bg-indigo-100 dark:bg-indigo-500/15 text-indigo-600 dark:text-indigo-400 shadow-sm">
+                      <area.icon className="w-5 h-5" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-gray-900 dark:text-white">{area.title}</h3>
-                      <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">{area.description}</p>
+                      <h3 className="font-jakarta text-base font-semibold text-gray-900 dark:text-white">{area.title}</h3>
+                      <p className="mt-1 text-xs text-gray-600 dark:text-gray-400">{area.description}</p>
                     </div>
                   </div>
-                  <ul className="mt-4 space-y-2 text-sm text-gray-600 dark:text-gray-400">
+                  <ul className="mt-3 space-y-1.5 text-xs text-gray-600 dark:text-gray-400">
                     {area.points.map((point) => (
                       <li key={point} className="flex items-start gap-2">
-                        <span className="mt-1 inline-flex h-2 w-2 rounded-full bg-primary/70 dark:bg-secondary/70" />
+                        <span className="mt-1.5 inline-flex h-1.5 w-1.5 rounded-full bg-primary-500/70 dark:bg-secondary-500/70" />
                         <span>{point}</span>
                       </li>
                     ))}
@@ -191,119 +183,90 @@ const About = () => {
                 </motion.div>
               ))}
             </div>
-
-            {/* <div className="flex flex-wrap gap-4 pt-4">
-              <button
-                type="button"
-                onClick={() => setIsEducationModalOpen(true)}
-                className="button-primary"
-              >
-                View Education Journey
-              </button>
-              <a href="#projects" className="button-secondary">
-                See Featured Projects
-              </a>
-            </div> */}
           </motion.div>
 
+          {/* Right column — profile image */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
+            initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-100px' }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.5, delay: 0.15 }}
             className="lg:col-span-2 relative"
           >
-            <div className="relative rounded-3xl overflow-hidden border border-gray-200 dark:border-gray-700 shadow-2xl bg-white/80 dark:bg-gray-900/70 backdrop-blur-md">
-              <div className="absolute inset-0 bg-gradient-to-tr from-primary/15 via-transparent to-secondary/20" />
+            <div className="relative rounded-3xl overflow-hidden border border-gray-200 dark:border-gray-700 shadow-2xl bg-white dark:bg-gray-900/70 backdrop-blur-md">
+              <div className="absolute inset-0 bg-transparent dark:bg-gradient-to-tr dark:from-primary-500/15 dark:via-transparent dark:to-secondary-500/20" />
               <div className="relative aspect-[4/5]">
                 <Image
                   src="/profile_3.jpg"
                   alt="Vivek Nath Tiwari"
                   fill
                   className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 40vw"
+                  sizes="(max-width: 768px) 100vw, 35vw"
                 />
               </div>
             </div>
 
-            <div className="absolute -bottom-10 left-1/2 w-[90%] -translate-x-1/2 rounded-2xl border border-primary/20 dark:border-secondary/20 bg-white dark:bg-gray-900 shadow-xl p-6 flex flex-col gap-3">
-              <div className="flex items-center gap-3">
-                <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-primary to-secondary text-white shadow-lg">
-                  <FiTarget className="w-5 h-5" />
+            <div className="absolute -bottom-8 left-1/2 w-[88%] -translate-x-1/2 rounded-xl border border-primary-500/20 dark:border-secondary-500/20 bg-white dark:bg-gray-900 shadow-lg p-4 space-y-2">
+              <div className="flex items-center gap-2.5">
+                <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-primary-500 to-secondary-500 text-white shadow">
+                  <FiTarget className="w-4 h-4" />
                 </span>
                 <div>
-                  <p className="text-sm font-semibold text-primary dark:text-secondary uppercase tracking-[0.2em]">
-                    Currently Building At
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-primary-600 dark:text-secondary-400">
+                    Currently at
                   </p>
-                  <p className="text-base font-semibold text-gray-900 dark:text-white">
-                    SmartData Enterprisez, Mohali
+                  <p className="text-sm font-semibold text-gray-900 dark:text-white">
+                    smartData Enterprises Inc, Mohali
                   </p>
                 </div>
               </div>
-              <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-                Delivering AI-augmented applications, streamlining DevOps with Jenkins, and architecting secure data flows across cloud-native environments.
+              <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
+                Delivering AI-augmented applications, streamlining DevOps, and architecting secure data flows.
               </p>
             </div>
           </motion.div>
         </div>
 
+        {/* Highlight cards */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-100px' }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="mt-24 grid grid-cols-1 md:grid-cols-3 gap-6"
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-5"
         >
           {highlightCards.map((card) => {
             const CardIcon = card.icon
+            const inner = (
+              <div className="relative flex flex-col gap-3">
+                {/* Left accent strip */}
+                <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-indigo-500 to-violet-500 rounded-l-2xl" />
+                <div className="pl-3">
+                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-100 dark:bg-indigo-500/15 text-indigo-600 dark:text-indigo-400 shadow-sm">
+                    <CardIcon className="w-5 h-5" />
+                  </span>
+                  <h3 className="mt-3 font-jakarta text-lg font-bold text-gray-900 dark:text-white">{card.title}</h3>
+                  <p className="mt-1 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">{card.description}</p>
+                  <span className="mt-3 inline-flex items-center gap-1.5 text-xs font-semibold text-indigo-600 dark:text-indigo-400 group-hover:gap-2.5 transition-all duration-200">
+                    {card.cta} <span className="text-sm transition-transform duration-200 group-hover:translate-x-0.5">→</span>
+                  </span>
+                </div>
+              </div>
+            )
+
+            const cardClass = 'group glass-card p-5 cursor-pointer'
 
             if (card.href) {
               return (
-                <a
-                  key={card.title}
-                  href={card.href}
-                  className="group relative overflow-hidden rounded-2xl border border-gray-200 dark:border-gray-700 bg-white/80 dark:bg-gray-900/60 backdrop-blur-lg p-6 shadow-md hover:shadow-xl transition-all duration-300"
-                >
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <div className="relative flex flex-col gap-4">
-                    <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-primary/10 to-secondary/10 text-primary dark:text-secondary">
-                      <CardIcon className="w-6 h-6" />
-                    </span>
-                    <h3 className="text-xl font-semibold text-gray-900 dark:text-white">{card.title}</h3>
-                    <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-                      {card.description}
-                    </p>
-                    <span className="inline-flex items-center gap-2 text-sm font-medium text-primary dark:text-secondary">
-                      Explore projects
-                      <span className="text-lg">→</span>
-                    </span>
-                  </div>
+                <a key={card.title} href={card.href} className={cardClass}>
+                  {inner}
                 </a>
               )
             }
 
             return (
-              <div
-                key={card.title}
-                onClick={card.onClick}
-                className={`group relative overflow-hidden rounded-2xl border border-gray-200 dark:border-gray-700 bg-white/80 dark:bg-gray-900/60 backdrop-blur-lg p-6 shadow-md hover:shadow-xl transition-all duration-300 ${
-                  card.onClick ? 'cursor-pointer' : ''
-                }`}
-              >
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="relative flex flex-col gap-4">
-                  <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-primary/10 to-secondary/10 text-primary dark:text-secondary">
-                    <CardIcon className="w-6 h-6" />
-                  </span>
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white">{card.title}</h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-                    {card.description}
-                  </p>
-                  <span className="inline-flex items-center gap-2 text-sm font-medium text-primary dark:text-secondary">
-                    {card.onClick ? 'Open timeline' : 'Charting the next chapter'}
-                    <span className="text-lg">→</span>
-                  </span>
-                </div>
+              <div key={card.title} onClick={card.onClick} className={cardClass}>
+                {inner}
               </div>
             )
           })}
@@ -313,6 +276,10 @@ const About = () => {
       <EducationModal
         isOpen={isEducationModalOpen}
         onClose={() => setIsEducationModalOpen(false)}
+      />
+      <GoalsModal
+        isOpen={isGoalsModalOpen}
+        onClose={() => setIsGoalsModalOpen(false)}
       />
     </section>
   )

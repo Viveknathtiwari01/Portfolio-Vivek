@@ -23,9 +23,7 @@ const Contact = () => {
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
       })
 
@@ -39,111 +37,74 @@ const Contact = () => {
       setFormData({ from_name: '', from_email: '', subject: '', message: '' })
     } catch (error) {
       setStatus('error')
-      setErrorMessage(error instanceof Error ? error.message : 'Failed to send message. Please try again.')
+      setErrorMessage(error instanceof Error ? error.message : 'Failed to send. Please try again.')
       console.error('Contact form error:', error)
     }
   }
 
   const socialLinks = [
-    {
-      name: 'Download Resume',
-      icon: FaFileDownload,
-      href: '/Vivek_Resume_June_update_25.pdf',
-      download: true,
-    },
-    {
-      name: 'Email',
-      icon: FaEnvelope,
-      href: 'mailto:viveknath62094@gmail.com',
-    },
-    {
-      name: 'GitHub',
-      icon: FaGithub,
-      href: 'https://github.com/Viveknathtiwari01',
-    },
-    {
-      name: 'LinkedIn',
-      icon: FaLinkedin,
-      href: 'https://www.linkedin.com/in/vivek-nath-tiwari-a27156262/',
-    },
+    { name: 'Download Resume', icon: FaFileDownload, href: '/Vivek_Resume_June_update_25.pdf', download: true },
+    { name: 'Email', icon: FaEnvelope, href: 'mailto:viveknath62094@gmail.com' },
+    { name: 'GitHub', icon: FaGithub, href: 'https://github.com/Viveknathtiwari01' },
+    { name: 'LinkedIn', icon: FaLinkedin, href: 'https://www.linkedin.com/in/vivek-nath-tiwari-a27156262/' },
   ]
 
   const contactDetails = [
-    {
-      icon: FiMail,
-      title: 'Email',
-      description: 'viveknath62094@gmail.com',
-      href: 'mailto:viveknath62094@gmail.com',
-    },
-    {
-      icon: FiPhoneCall,
-      title: 'Consultation slots',
-      description: 'Book a quick call via calendly.com/vivek-tech',
-      href: 'https://calendly.com/viveknath62094/30min',
-    },
-    {
-      icon: FiClock,
-      title: 'Typical response time',
-      description: 'Within 24 hours · IST (UTC+5:30)',
-    },
-    {
-      icon: FiMapPin,
-      title: 'Based in',
-      description: 'Bettiah, Bihar, India · Remote-friendly',
-    },
+    { icon: FiMail, title: 'Email', description: 'viveknath62094@gmail.com', href: 'mailto:viveknath62094@gmail.com' },
+    { icon: FiPhoneCall, title: 'Consultation', description: 'Book via Calendly', href: 'https://calendly.com/viveknath62094/30min' },
+    { icon: FiClock, title: 'Response time', description: 'Within 24 hours · IST' },
+    { icon: FiMapPin, title: 'Based in', description: 'Bihar, India · Remote-friendly' },
   ]
 
+  const inputClass =
+    'w-full rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900/70 px-4 py-2.5 text-sm text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:border-primary-500/50 focus:ring-2 focus:ring-primary-500/20 transition-colors outline-none'
+
   return (
-    <section id="contact" className="relative py-24 overflow-hidden">
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-white to-secondary/5 dark:from-primary/15 dark:via-gray-950 dark:to-secondary/15" />
-        <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] dark:bg-[radial-gradient(#374151_1px,transparent_1px)] [background-size:16px_16px]" />
-      </div>
+    <section id="contact" className="relative py-20 overflow-hidden">
+      <div className="section-bg" />
 
       <div className="section-container relative z-10">
+        {/* Section header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-100px' }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-20"
+          transition={{ duration: 0.5 }}
+          className="text-center mb-16"
         >
-          <span className="inline-block px-5 py-2.5 bg-gradient-to-r from-primary/10 to-secondary/10 text-primary dark:text-secondary text-sm font-medium rounded-full mb-5 border border-primary/20 dark:border-secondary/20 backdrop-blur-sm">
-            Let's collaborate
-          </span>
-          <h2 className="text-5xl font-bold text-gray-900 dark:text-white mb-5">
-            Ready to build your next intelligent product?
-          </h2>
-          <div className="w-24 h-1.5 bg-gradient-to-r from-primary to-secondary mx-auto mb-6 rounded-full" />
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Tell me about your mission, and I’ll help engineer the roadmap—from rapid prototypes to enterprise-ready experiences powered by AI.
+          <span className="section-badge">Contact</span>
+          <h2 className="section-title">Let's work together</h2>
+          <div className="section-divider" />
+          <p className="section-subtitle">
+            Tell me about your project and I'll help engineer the roadmap.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+          {/* Left — info */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
+            initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-100px' }}
-            transition={{ duration: 0.6 }}
-            className="space-y-8"
+            transition={{ duration: 0.5 }}
+            className="space-y-6"
           >
-            <div className="relative overflow-hidden rounded-3xl border border-gray-200 dark:border-gray-700 bg-white/80 dark:bg-gray-900/70 backdrop-blur-lg p-10 shadow-xl">
-              <div className="absolute -top-24 -right-16 w-56 h-56 bg-secondary/10 rounded-full blur-3xl animate-blob" />
-              <div className="absolute -bottom-24 -left-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl animate-blob animation-delay-2000" />
-              <div className="relative space-y-6">
-                <h3 className="text-2xl font-semibold text-gray-900 dark:text-white">
-                  Accelerate delivery with a partner who codes, designs, and thinks in product.
+            {/* Value prop */}
+            <div className="glass-card p-6 sm:p-7">
+              <div className="absolute -top-16 -right-12 w-40 h-40 bg-transparent dark:bg-secondary-500/15 rounded-full blur-3xl animate-blob" />
+              <div className="absolute -bottom-16 -left-8 w-48 h-48 bg-transparent dark:bg-primary-500/15 rounded-full blur-3xl animate-blob animation-delay-2000" />
+              {/* Left accent strip */}
+              <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-indigo-500 to-violet-500 rounded-l-2xl" />
+              <div className="relative space-y-4 pl-2">
+                <h3 className="font-jakarta text-lg font-bold text-gray-900 dark:text-white">
+                  Partner who codes, designs, and thinks in product.
                 </h3>
                 <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-                  Whether you need a production-grade MVP, AI integration strategy, or modernization of an existing platform, we will craft a delivery plan tailored to your timeline.
+                  Whether you need a production-grade MVP, AI integration, or platform modernization — let's craft a plan tailored to your timeline.
                 </p>
-                <div className="flex flex-wrap gap-3">
-                  {['Discovery workshops', 'Technical strategy', 'AI/ML implementation', 'Design systems'].map((chip) => (
-                    <span
-                      key={chip}
-                      className="px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-gray-600 dark:text-gray-300 bg-white/70 dark:bg-gray-900/70 border border-gray-200 dark:border-gray-700 rounded-full"
-                    >
+                <div className="flex flex-wrap gap-2">
+                  {['Discovery', 'Strategy', 'AI/ML', 'Design systems'].map((chip) => (
+                    <span key={chip} className="px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.15em] text-indigo-700 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-500/10 border border-indigo-100 dark:border-indigo-500/20 rounded-full">
                       {chip}
                     </span>
                   ))}
@@ -151,42 +112,48 @@ const Contact = () => {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              {contactDetails.map((detail) => {
+            {/* Contact details grid */}
+            <div className="grid grid-cols-2 gap-3">
+              {contactDetails.map((detail, i) => {
                 const DetailIcon = detail.icon
-                const content = (
-                  <div className="relative overflow-hidden rounded-2xl border border-gray-200 dark:border-gray-700 bg-white/80 dark:bg-gray-900/70 backdrop-blur-md p-6 shadow-md hover:shadow-xl transition-all duration-300">
-                    <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-primary/10 to-secondary/10 text-primary dark:text-secondary">
-                      <DetailIcon className="w-5 h-5" />
+                const inner = (
+                  <motion.div
+                    initial={{ opacity: 0, y: 12 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.3, delay: i * 0.08 }}
+                    whileHover={{ y: -3, scale: 1.02 }}
+                    className="group relative glass-card p-4 h-full overflow-hidden cursor-default transition-shadow duration-300 hover:shadow-lg hover:shadow-indigo-500/8"
+                  >
+                    {/* Left accent */}
+                    <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-gradient-to-b from-indigo-500 to-violet-500 rounded-l-2xl opacity-40 group-hover:opacity-100 transition-opacity duration-300" />
+                    {/* Hover glow */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/[0.03] to-violet-500/[0.03] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <span className="relative inline-flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-100 dark:bg-indigo-500/15 text-indigo-600 dark:text-indigo-400 shadow-sm group-hover:shadow-md group-hover:shadow-indigo-500/10 transition-all duration-300">
+                      <DetailIcon className="w-4 h-4 transition-transform duration-300 group-hover:scale-110" />
                     </span>
-                    <p className="mt-4 text-sm font-semibold text-gray-900 dark:text-white uppercase tracking-[0.15em]">
-                      {detail.title}
-                    </p>
-                    <p className="mt-2 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-                      {detail.description}
-                    </p>
-                  </div>
+                    <p className="mt-3 text-xs font-bold text-gray-900 dark:text-white uppercase tracking-[0.1em]">{detail.title}</p>
+                    <p className="mt-1 text-xs text-gray-600 dark:text-gray-400">{detail.description}</p>
+                  </motion.div>
                 )
-
                 if (detail.href) {
-                  return (
-                    <a key={detail.title} href={detail.href} target={detail.href.startsWith('http') ? '_blank' : undefined} rel="noopener noreferrer">
-                      {content}
-                    </a>
-                  )
+                  return <a key={detail.title} href={detail.href} target={detail.href.startsWith('http') ? '_blank' : undefined} rel="noopener noreferrer">{inner}</a>
                 }
-
-                return (
-                  <div key={detail.title}>{content}</div>
-                )
+                return <div key={detail.title}>{inner}</div>
               })}
             </div>
 
-            <div className="rounded-2xl border border-gray-200 dark:border-gray-700 bg-white/80 dark:bg-gray-900/70 backdrop-blur-md p-6 shadow-md">
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
-                Prefer direct channels?
-              </h3>
-              <div className="flex flex-wrap gap-3">
+            {/* Social links */}
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.3, delay: 0.35 }}
+              className="relative glass-card p-4 overflow-hidden"
+            >
+              <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-indigo-500 to-violet-500 opacity-50" />
+              <p className="text-xs font-bold text-gray-900 dark:text-white mb-3 uppercase tracking-[0.08em]">Direct channels</p>
+              <div className="flex flex-wrap gap-2">
                 {socialLinks.map((link) => (
                   <a
                     key={link.name}
@@ -194,122 +161,71 @@ const Contact = () => {
                     target={link.download ? '_self' : '_blank'}
                     rel={link.download ? undefined : 'noopener noreferrer'}
                     download={link.download}
-                    className="group inline-flex items-center gap-2 rounded-full border border-gray-200 dark:border-gray-700 bg-white/70 dark:bg-gray-900/70 px-4 py-2 text-sm text-gray-600 dark:text-gray-300 hover:border-primary/50 hover:text-primary dark:hover:text-secondary transition-all"
+                    className="group/link inline-flex items-center gap-1.5 rounded-full border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900/70 px-3.5 py-2 text-xs font-medium text-gray-600 dark:text-gray-400 hover:border-indigo-300 dark:hover:border-indigo-500/40 hover:bg-indigo-50/50 dark:hover:bg-indigo-500/10 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 hover:shadow-sm"
                   >
-                    <link.icon className="w-4 h-4" />
+                    <link.icon className="w-3.5 h-3.5 transition-transform duration-200 group-hover/link:scale-110" />
                     <span>{link.name}</span>
                   </a>
                 ))}
               </div>
-            </div>
+            </motion.div>
           </motion.div>
 
+          {/* Right — form */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
+            initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-100px' }}
-            transition={{ duration: 0.6, delay: 0.1 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
             className="relative"
           >
-            <div className="absolute -top-12 -right-10 w-48 h-48 bg-secondary/10 rounded-full blur-3xl animate-blob" />
-            <div className="absolute -bottom-16 -left-12 w-56 h-56 bg-primary/10 rounded-full blur-3xl animate-blob animation-delay-2000" />
+            <div className="absolute -top-8 -right-8 w-36 h-36 bg-transparent dark:bg-secondary-500/15 rounded-full blur-3xl animate-blob" />
+            <div className="absolute -bottom-12 -left-8 w-44 h-44 bg-transparent dark:bg-primary-500/15 rounded-full blur-3xl animate-blob animation-delay-2000" />
 
-            <div className="relative overflow-hidden rounded-3xl border border-gray-200 dark:border-gray-700 bg-white/85 dark:bg-gray-900/80 backdrop-blur-xl shadow-2xl">
-              <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 via-transparent to-secondary/15" />
-              <div className="relative p-10 space-y-6">
-                <h3 className="text-2xl font-semibold text-gray-900 dark:text-white">
-                  Share your vision
-                </h3>
-                <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-                  Drop a note about your idea, technical requirements, or the outcomes you are aiming for. I’ll respond with next steps and a tailored discovery plan.
-                </p>
+            <div className="glass-card overflow-hidden">
+              {/* Top gradient accent bar */}
+              <div className="h-1 bg-gradient-to-r from-indigo-500 to-violet-500" />
+              <div className="absolute inset-0 bg-transparent dark:bg-gradient-to-tr dark:from-primary-500/5 dark:via-transparent dark:to-secondary-500/10" />
+              <div className="relative p-6 sm:p-8 space-y-5">
+                <div>
+                  <h3 className="font-jakarta text-lg font-semibold text-gray-900 dark:text-white">Share your vision</h3>
+                  <p className="mt-1 text-xs text-gray-600 dark:text-gray-400">I'll respond with next steps and a tailored plan.</p>
+                </div>
 
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  <div className="grid grid-cols-2 gap-3">
                     <div>
-                      <label htmlFor="from_name" className="block text-xs font-semibold uppercase tracking-[0.2em] text-gray-600 dark:text-gray-400 mb-2">
-                        Name
-                      </label>
-                      <input
-                        type="text"
-                        id="from_name"
-                        name="from_name"
-                        required
-                        value={formData.from_name}
-                        onChange={(e) => setFormData({ ...formData, from_name: e.target.value })}
-                        className="w-full rounded-xl border border-gray-200 dark:border-gray-700 bg-white/80 dark:bg-gray-900/70 px-4 py-3 text-gray-900 dark:text-white focus:border-primary/50 focus:ring-2 focus:ring-primary/30"
-                      />
+                      <label htmlFor="from_name" className="block text-[10px] font-semibold uppercase tracking-[0.15em] text-gray-600 dark:text-gray-400 mb-1.5">Name</label>
+                      <input type="text" id="from_name" required value={formData.from_name} onChange={(e) => setFormData({ ...formData, from_name: e.target.value })} className={inputClass} />
                     </div>
                     <div>
-                      <label htmlFor="from_email" className="block text-xs font-semibold uppercase tracking-[0.2em] text-gray-600 dark:text-gray-400 mb-2">
-                        Email
-                      </label>
-                      <input
-                        type="email"
-                        id="from_email"
-                        name="from_email"
-                        required
-                        value={formData.from_email}
-                        onChange={(e) => setFormData({ ...formData, from_email: e.target.value })}
-                        className="w-full rounded-xl border border-gray-200 dark:border-gray-700 bg-white/80 dark:bg-gray-900/70 px-4 py-3 text-gray-900 dark:text-white focus:border-primary/50 focus:ring-2 focus:ring-primary/30"
-                      />
+                      <label htmlFor="from_email" className="block text-[10px] font-semibold uppercase tracking-[0.15em] text-gray-600 dark:text-gray-400 mb-1.5">Email</label>
+                      <input type="email" id="from_email" required value={formData.from_email} onChange={(e) => setFormData({ ...formData, from_email: e.target.value })} className={inputClass} />
                     </div>
                   </div>
                   <div>
-                    <label htmlFor="subject" className="block text-xs font-semibold uppercase tracking-[0.2em] text-gray-600 dark:text-gray-400 mb-2">
-                      Project focus or subject
-                    </label>
-                    <input
-                      type="text"
-                      id="subject"
-                      name="subject"
-                      required
-                      value={formData.subject}
-                      onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                      className="w-full rounded-xl border border-gray-200 dark:border-gray-700 bg-white/80 dark:bg-gray-900/70 px-4 py-3 text-gray-900 dark:text-white focus:border-primary/50 focus:ring-2 focus:ring-primary/30"
-                    />
+                    <label htmlFor="subject" className="block text-[10px] font-semibold uppercase tracking-[0.15em] text-gray-600 dark:text-gray-400 mb-1.5">Subject</label>
+                    <input type="text" id="subject" required value={formData.subject} onChange={(e) => setFormData({ ...formData, subject: e.target.value })} className={inputClass} />
                   </div>
                   <div>
-                    <label htmlFor="message" className="block text-xs font-semibold uppercase tracking-[0.2em] text-gray-600 dark:text-gray-400 mb-2">
-                      How can I help?
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      required
-                      rows={5}
-                      value={formData.message}
-                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      className="w-full rounded-2xl border border-gray-200 dark:border-gray-700 bg-white/80 dark:bg-gray-900/70 px-4 py-3 text-gray-900 dark:text-white focus:border-primary/50 focus:ring-2 focus:ring-primary/30"
-                    />
+                    <label htmlFor="message" className="block text-[10px] font-semibold uppercase tracking-[0.15em] text-gray-600 dark:text-gray-400 mb-1.5">Message</label>
+                    <textarea id="message" required rows={4} value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} className={`${inputClass} resize-none`} />
                   </div>
-                  <button
-                    type="submit"
-                    disabled={status === 'loading'}
-                    className="button-primary w-full disabled:opacity-50 disabled:cursor-not-allowed"
-                    aria-busy={status === 'loading'}
-                  >
+
+                  <button type="submit" disabled={status === 'loading'} className="button-primary w-full disabled:opacity-50 disabled:cursor-not-allowed" aria-busy={status === 'loading'}>
                     {status === 'loading' ? (
                       <span className="inline-flex items-center gap-2">
-                        <span
-                          className="h-4 w-4 rounded-full border-2 border-white/40 border-t-white animate-spin"
-                          aria-hidden="true"
-                        />
-                        Sending...
+                        <span className="h-3.5 w-3.5 rounded-full border-2 border-white/40 border-t-white animate-spin" aria-hidden="true" />
+                        Sending…
                       </span>
-                    ) : (
-                      'Send message'
-                    )}
+                    ) : 'Send message'}
                   </button>
+
                   {status === 'success' && (
-                    <p className="text-sm font-medium text-green-600 dark:text-green-400">
-                      Message sent successfully! I’ll be in touch shortly.
-                    </p>
+                    <p className="text-xs font-medium text-green-600 dark:text-green-400">Sent! I'll be in touch shortly.</p>
                   )}
                   {status === 'error' && (
-                    <p className="text-sm font-medium text-red-500 dark:text-red-400">
-                      {errorMessage || 'Failed to send message. Please try again.'}
-                    </p>
+                    <p className="text-xs font-medium text-red-500 dark:text-red-400">{errorMessage || 'Failed to send. Please try again.'}</p>
                   )}
                 </form>
               </div>

@@ -1,105 +1,79 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import {
-  SiReact,
-  SiNodedotjs,
-  SiExpress,
-  SiMongodb,
-  SiPython,
-  SiJavascript,
-  SiHtml5,
-  SiCss3,
-  SiTensorflow,
-  SiScikitlearn,
-  SiOpenai,
-  SiGoogle,
-  SiTailwindcss,
-  SiStreamlit,
-  SiNextdotjs,
-  SiPostgresql,
-  SiClerk,
-  SiFlask,
-  SiDocker,
-  SiFiles,
-  SiTypescript,
-  SiPrisma,
-  SiMysql,
-  SiPandas,
-  SiSequelize,
-  SiPlotly,
-  SiNumpy,
-  SiDatadog,
+  SiReact, SiNodedotjs, SiExpress, SiMongodb, SiPython, SiJavascript,
+  SiHtml5, SiCss3, SiTensorflow, SiScikitlearn, SiOpenai, SiGoogle,
+  SiTailwindcss, SiStreamlit, SiNextdotjs, SiPostgresql, SiClerk,
+  SiFlask, SiDocker, SiFiles, SiTypescript, SiPrisma, SiMysql,
+  SiPandas, SiSequelize, SiPlotly, SiNumpy, SiDatadog,
 } from "react-icons/si";
 import { BsFiletypePdf } from "react-icons/bs";
 
 const Projects = () => {
   const projects = [
     {
-      title: "WhatsApp Chat Analysis – AI-Driven Conversational Insight Tool",
+      title: "WhatsApp Chat Analysis — AI Insight Tool",
       description:
-        "A Machine Learning project that analyzes exported WhatsApp chat files to extract valuable insights such as most active users, sentiment trends, emoji usage, word clouds, and peak activity times using Python and NLP techniques.",
+        "ML project analyzing exported WhatsApp chats for sentiment trends, emoji usage, word clouds, and activity patterns using NLP.",
       techStack: [
         { name: "Python", icon: SiPython, color: "#3776AB" },
-        { name: "Pandas", icon: SiPandas, color: "#704ff4ff" },
-        { name: "Matplotlib", icon: SiPlotly, color: "#3b6ee6ff" },
+        { name: "Pandas", icon: SiPandas, color: "#704ff4" },
+        { name: "Matplotlib", icon: SiPlotly, color: "#3b6ee6" },
         { name: "Seaborn", icon: SiSequelize, color: "#00B4D8" },
         { name: "NLTK", icon: SiNumpy, color: "#A54399" },
         { name: "TensorFlow", icon: SiTensorflow, color: "#FF6F00" },
         { name: "Streamlit", icon: SiStreamlit, color: "#FF4B4B" },
-        { name: "WordCloud", icon: SiPython, color: "#0E76A8" },
       ],
-      github:
-        "https://github.com/Viveknathtiwari01/WhatsApp_Chat_Anaysis_Updated",
+      github: "https://github.com/Viveknathtiwari01/WhatsApp_Chat_Anaysis_Updated",
       live: "https://whatsapp-chat-anaysis-vivek.streamlit.app/upload_file",
       image: "/projects/WhatsappChat.png",
     },
     {
-      title: "Disease Diagnosis AI – Symptom-Based Health Prediction System",
+      title: "Disease Diagnosis AI — Health Predictor",
       description:
-        "An AI-powered system that predicts potential diseases based on user-input symptoms using machine learning algorithms and a custom-trained model. Built with Python and deployed using a simple web interface.",
+        "AI system predicting diseases from user-input symptoms using custom-trained ML algorithms with a web interface.",
       techStack: [
         { name: "Python", icon: SiPython, color: "#3776AB" },
         { name: "Scikit-learn", icon: SiScikitlearn, color: "#F7931E" },
-        { name: "Pandas", icon: SiPandas, color: "#856bebff" },
-        { name: "NumPy", icon: SiNumpy, color: "#1caadaff" },
+        { name: "Pandas", icon: SiPandas, color: "#856beb" },
+        { name: "NumPy", icon: SiNumpy, color: "#1caada" },
         { name: "Streamlit", icon: SiStreamlit, color: "#FF4B4B" },
-        { name: "Matplotlib", icon: SiPlotly, color: "#3b6ee6ff" },
-        { name: "CSV Dataset", icon: SiDatadog, color: "#EE4C2C" },
+        { name: "Matplotlib", icon: SiPlotly, color: "#3b6ee6" },
       ],
       github: "https://github.com/Viveknathtiwari01/Disease-detection-system",
       live: "https://disease-detection-system-vivek.streamlit.app/",
       image: "/projects/disease_detection.png",
     },
     {
-      title: "FitFussion – AI Wellness & Lifestyle Tracker",
+      title: "FitFussion — AI Wellness Platform",
       description:
-        "A full-stack AI wellness platform that helps users manage daily habits, track mood and goals, get personalized meal/workout plans, and chat with an AI wellness coach powered by Gemini 2.0 Flash.",
+        "Full-stack wellness app for habits, mood, goals, and personalized meal/workout plans with an AI coach powered by Gemini 2.0.",
       techStack: [
         { name: "Next.js", icon: SiNextdotjs, color: "#61DAFB" },
         { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
         { name: "Clerk", icon: SiClerk, color: "#3B49DF" },
-        { name: "MySQL", icon: SiMysql, color: "#39b7d3ff" },
-        { name: "Express.js", icon: SiExpress, color: "#47A248" },
-        { name: "Prisma ORM", icon: SiPrisma, color: "#10A37F" },
-        { name: "Tailwind CSS", icon: SiTailwindcss, color: "#38BDF8" },
-        { name: "Gemini API", icon: SiGoogle, color: "#4285F4" },
+        { name: "MySQL", icon: SiMysql, color: "#39b7d3" },
+        { name: "Express", icon: SiExpress, color: "#47A248" },
+        { name: "Prisma", icon: SiPrisma, color: "#10A37F" },
+        { name: "Tailwind", icon: SiTailwindcss, color: "#38BDF8" },
+        { name: "Gemini", icon: SiGoogle, color: "#4285F4" },
       ],
-      github:
-        "https://github.com/Viveknathtiwari01/Personalized-health-website",
+      github: "https://github.com/Viveknathtiwari01/Personalized-health-website",
       live: "https://wellnex.vercel.app/",
       image: "/projects/FitFussion.png",
     },
     {
-      title: "HireMind - AI Powered Career Coach",
+      title: "HireMind — AI Career Coach",
       description:
-        "An AI-powered career coach that helps you to find jobs insights, market trends, mock interview preparation, resume builder, and cover letter builder.",
+        "AI career coach providing job insights, market trends, mock interviews, and resume/cover letter building.",
       techStack: [
-        { name: "React Js", icon: SiReact, color: "#61DAFB" },
-        { name: "Next js", icon: SiNextdotjs, color: "#61DAFB" },
-        { name: "Gemini API", icon: SiGoogle, color: "#4285F4" },
-        { name: "Tailwind CSS", icon: SiTailwindcss, color: "#38BDF8" },
+        { name: "React", icon: SiReact, color: "#61DAFB" },
+        { name: "Next.js", icon: SiNextdotjs, color: "#61DAFB" },
+        { name: "Gemini", icon: SiGoogle, color: "#4285F4" },
+        { name: "Tailwind", icon: SiTailwindcss, color: "#38BDF8" },
         { name: "NeonDB", icon: SiPostgresql, color: "#336791" },
         { name: "Clerk", icon: SiClerk, color: "#E34F26" },
       ],
@@ -108,51 +82,44 @@ const Projects = () => {
       image: "/projects/hiremind.png",
     },
     {
-      title: "Quotation Generation Sysytem",
+      title: "Quotation Generation System",
       description:
-        "Dynamic web app for creating customizable quotations with image insertion, product management, and secure user authentication. Features PDF upload and parsing, AI-powered content analysis, and real-time PDF generation. ",
+        "Dynamic web app for customizable quotations with PDF upload/parsing, AI content analysis, and real-time PDF generation.",
       techStack: [
         { name: "Python", icon: SiPython, color: "#3776AB" },
         { name: "Docker", icon: SiDocker, color: "#2496ED" },
         { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
+        { name: "Flask", icon: SiFlask, color: "#FF0000" },
+        { name: "OpenAI", icon: SiOpenai, color: "#10A37F" },
         { name: "ReportLab", icon: SiFiles, color: "#FF0000" },
         { name: "pdf2image", icon: BsFiletypePdf, color: "#FF0000" },
-        { name: "Flask", icon: SiFlask, color: "#FF0000" },
-        { name: "OpenAI API", icon: SiOpenai, color: "#10A37F" },
-
-        { name: "HTML/CSS", icon: SiHtml5, color: "#E34F26" },
       ],
       live: "https://pragati-enterprises.dev-server.karvatech.com/login?next=%2F",
       image: "/projects/pragati.png",
     },
     {
-      title: "CHATVERSE",
+      title: "CHATVERSE — Real-time Chat App",
       description:
-        "A chat application with real-time messaging, user authentication, one-to-one chat, group chat, real-time chat with ChatGPT using OpenAI API, real-time image generation using DALL-E API, and a clean UI.",
+        "Chat app with real-time messaging, group chat, ChatGPT integration via OpenAI API, and DALL-E image generation.",
       techStack: [
         { name: "Node.js", icon: SiNodedotjs, color: "#339933" },
         { name: "Express", icon: SiExpress, color: "#339933" },
         { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
         { name: "OpenAI", icon: SiOpenai, color: "#10A37F" },
-        { name: "DALL-E", icon: SiOpenai, color: "#10A37F" },
         { name: "React", icon: SiReact, color: "#61DAFB" },
-        { name: "Tailwind CSS", icon: SiTailwindcss, color: "#38BDF8" },
+        { name: "Tailwind", icon: SiTailwindcss, color: "#38BDF8" },
       ],
       github: "https://github.com/Viveknathtiwari01/CHATVERSE",
       image: "/projects/chatverse.png",
     },
-
     {
       title: "AI Mock Interviewer",
       description:
-        "An AI-powered mock interviewer that helps you to prepare for your interviews with personalized suggestions.",
+        "AI-powered mock interviewer with personalized suggestions to help prepare for technical interviews.",
       techStack: [
-        { name: "Python", icon: SiPython, color: "#3776AB" },
-        { name: "Scikit-learn", icon: SiScikitlearn, color: "#F7931E" },
-        { name: "Next Js", icon: SiNextdotjs, color: "#61DAFB" },
+        { name: "Next.js", icon: SiNextdotjs, color: "#61DAFB" },
         { name: "React", icon: SiReact, color: "#61DAFB" },
         { name: "Node.js", icon: SiNodedotjs, color: "#339933" },
-        { name: "Express", icon: SiExpress, color: "#339933" },
         { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
         { name: "OpenAI", icon: SiOpenai, color: "#10A37F" },
       ],
@@ -162,7 +129,7 @@ const Projects = () => {
     {
       title: "Weather App",
       description:
-        "A weather forecast web application using OpenWeatherMap API with real-time weather data and responsive design.",
+        "Real-time weather forecast app using OpenWeatherMap API with responsive design and error handling.",
       techStack: [
         { name: "HTML5", icon: SiHtml5, color: "#E34F26" },
         { name: "CSS3", icon: SiCss3, color: "#1572B6" },
@@ -173,121 +140,110 @@ const Projects = () => {
     },
   ];
 
-  const container = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const item = {
-    hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0 },
-  };
-
   return (
-    <section id="projects" className="relative py-24 overflow-hidden">
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-white to-secondary/5 dark:from-primary/15 dark:via-gray-950 dark:to-secondary/15" />
-        <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] dark:bg-[radial-gradient(#374151_1px,transparent_1px)] [background-size:16px_16px]" />
-      </div>
+    <section id="projects" className="section-projects section-accent relative py-20 overflow-hidden">
 
       <div className="section-container relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-100px' }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-20"
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-16"
         >
-          <span className="inline-block px-5 py-2.5 bg-gradient-to-r from-primary/10 to-secondary/10 text-primary dark:text-secondary text-sm font-medium rounded-full mb-5 border border-primary/20 dark:border-secondary/20 backdrop-blur-sm">
-            Product stories
-          </span>
-          <h2 className="text-5xl font-bold text-gray-900 dark:text-white mb-5">
-            Featured projects that blend craft & intelligence
-          </h2>
-          <div className="w-24 h-1.5 bg-gradient-to-r from-primary to-secondary mx-auto mb-6 rounded-full" />
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            A snapshot of platforms, AI experiments, and full-stack solutions I’ve shaped end-to-end—from research to release.
+          <span className="section-badge">Projects</span>
+          <h2 className="section-title">Featured work</h2>
+          <div className="section-divider" />
+          <p className="section-subtitle">
+            Platforms, AI experiments, and full-stack solutions shaped end-to-end.
           </p>
         </motion.div>
 
         <motion.div
-          variants={container}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, margin: '-100px' }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.5 }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
           {projects.map((project, index) => (
             <motion.div
               key={index}
-              variants={item}
-              className="group relative overflow-hidden rounded-3xl border border-gray-200 dark:border-gray-700 bg-white/80 dark:bg-gray-900/70 backdrop-blur-lg shadow-lg hover:shadow-2xl transition-all duration-300"
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.4, delay: index * 0.06 }}
+              whileHover={{ y: -4 }}
+              className="group glass-card flex flex-col"
             >
-              <div className="relative overflow-hidden">
-                <img
+              {/* Thumbnail */}
+              <div className="relative overflow-hidden h-44">
+                <Image
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-52 object-cover"
+                  fill
+                  className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-secondary/25" />
+                <div className="absolute inset-0 bg-transparent dark:bg-gradient-to-br dark:from-primary-500/15 dark:via-transparent dark:to-secondary-500/20" />
               </div>
-              <div className="relative p-8 space-y-5">
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white leading-snug group-hover:text-primary transition-colors">
+
+              {/* Content */}
+              <div className="flex flex-col flex-1 p-5 sm:p-6 gap-4">
+                <h3 className="font-jakarta text-base font-semibold text-gray-900 dark:text-white leading-snug group-hover:text-primary-600 dark:group-hover:text-secondary-400 transition-colors">
                   {project.title}
                 </h3>
-                <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed flex-1">
                   {project.description}
                 </p>
-                <div className="flex flex-wrap gap-2">
+
+                {/* Tech stack */}
+                <div className="flex flex-wrap gap-1.5">
                   {project.techStack.map((tech, i) => (
                     <div
                       key={i}
-                      className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium border border-gray-100 dark:border-gray-700"
-                      style={{
-                        backgroundColor: `${tech.color}1A`,
-                        color: tech.color,
-                      }}
+                      className="flex items-center gap-1 px-2 py-1 rounded-full text-[10px] font-medium border border-gray-100 dark:border-gray-700"
+                      style={{ backgroundColor: `${tech.color}15`, color: tech.color }}
                     >
-                      <tech.icon className="w-4 h-4" />
+                      <tech.icon className="w-3 h-3" />
                       <span>{tech.name}</span>
                     </div>
                   ))}
                 </div>
-                <div className="flex items-center gap-4 pt-4">
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-secondary transition-colors"
-                  >
-                    <FaGithub className="w-5 h-5" />
-                    Code
-                  </a>
+
+                {/* Links */}
+                <div className="flex items-center gap-4 pt-2 border-t border-gray-100 dark:border-gray-700">
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-xs font-medium text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-secondary-400 transition-colors"
+                    >
+                      <FaGithub className="w-4 h-4" /> Code
+                    </a>
+                  )}
                   {project.live && (
                     <a
                       href={project.live}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-secondary transition-colors"
+                      className="inline-flex items-center gap-1.5 text-xs font-medium text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-secondary-400 transition-colors"
                     >
-                      <FaExternalLinkAlt className="w-4 h-4" />
-                      Live
+                      <FaExternalLinkAlt className="w-3 h-3" /> Live
                     </a>
                   )}
                 </div>
               </div>
-              <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-primary to-secondary opacity-0 group-hover:opacity-100 transition-opacity" />
+
+              {/* Bottom accent line */}
+              <div className="h-0.5 bg-gradient-to-r from-indigo-500 to-violet-500 opacity-30 group-hover:opacity-100 transition-opacity duration-300" />
             </motion.div>
           ))}
         </motion.div>
       </div>
     </section>
   );
-}
+};
 
 export default Projects;
